@@ -862,3 +862,389 @@ Weather bot scan  2026-10-22 17:48 UTC   (paper trading only)
   New Orleans low 2026-10-23  56-57°       BUY NO  @ 73¢  edge +19¢
 Run  python3 report.py  after markets settle to see results.
 Dashboard updated: open dashboard.html
+
+PAPER TRADING SCORECARD
+============================================================
+Settled trades: 0    Still open: 82
+Nothing settled yet. Markets settle the morning after each day.
+
+Dashboard updated: open dashboard.html
+Weather bot scan  2026-10-22 19:51 UTC   (paper trading only)
+
+  New York  Fri Oct 23   forecast high 59.0°F  (range 56-63, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    56° or below       16%     4¢    97¢    
+    57-58°             27%    58¢    43¢    
+    59-60°             30%    38¢    63¢    
+    61-62°             20%     4¢    97¢    
+    63-64°              7%     1¢   100¢    
+    65° or above        1%     1¢   100¢    
+
+  New York low  Fri Oct 23   forecast low 46.6°F  (range 43-52, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    40° or below        1%     4¢   100¢    
+    41-42°              7%     2¢    99¢    
+    43-44°             18%    16¢    93¢    
+    45-46°             25%    51¢    64¢    BUY NO @ 64¢  edge +9¢
+    47-48°             23%    43¢    70¢    
+    49° or above       27%     9¢    94¢    BUY YES @ 9¢  edge +17¢
+
+  Chicago  Fri Oct 23   forecast high 71.2°F  (range 69-74, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    68° or below       10%     2¢    99¢    
+    69-70°             27%     7¢    95¢    BUY YES @ 7¢  edge +20¢
+    71-72°             36%    53¢    49¢    BUY NO @ 49¢  edge +13¢
+    73-74°             21%    42¢    59¢    BUY NO @ 59¢  edge +19¢
+    75-76°              5%     3¢    98¢    
+    77° or above        1%     1¢   100¢    
+
+  Chicago low  Fri Oct 23   forecast low 50.8°F  (range 45-56, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    44° or below        3%     3¢    98¢    
+    45-46°             11%    12¢    95¢    
+    47-48°             20%    22¢    80¢    
+    49-50°             19%    49¢    66¢    BUY NO @ 66¢  edge +13¢
+    51-52°             14%    23¢    82¢    
+    53° or above       34%     3¢    98¢    
+
+  Miami  Fri Oct 23   forecast high 81.1°F  (range 77-85, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    78° or below       13%     1¢   100¢    
+    79-80°             26%     5¢    96¢    
+    81-82°             33%    18¢    83¢    BUY YES @ 18¢  edge +14¢
+    83-84°             20%    59¢    42¢    
+    85-86°              6%    23¢    78¢    BUY NO @ 78¢  edge +14¢
+    87° or above        1%     2¢    99¢    
+
+  Miami low  Fri Oct 23   forecast low 70.6°F  (range 66-76, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    64° or below        2%     2¢    99¢    
+    65-66°              9%     5¢    96¢    
+    67-68°             21%    15¢    91¢    
+    69-70°             24%    36¢    70¢    
+    71-72°             16%    33¢    73¢    BUY NO @ 73¢  edge +10¢
+    73° or above       29%    26¢    85¢    
+
+  Austin  Fri Oct 23   forecast high 85.7°F  (range 81-89, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    83° or below       18%     2¢    99¢    
+    84-85°             29%    12¢    89¢    BUY YES @ 12¢  edge +16¢
+    86-87°             30%    68¢    35¢    
+    88-89°             17%    22¢    82¢    
+    90-91°              5%     2¢    99¢    
+    92° or above        1%     2¢   100¢    
+
+  Austin low  Fri Oct 23   forecast low 58.0°F  (range 51-64, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    49° or below        1%     6¢    97¢    
+    50-51°              3%    37¢    79¢    BUY NO @ 79¢  edge +17¢
+    52-53°              8%    43¢    73¢    BUY NO @ 73¢  edge +18¢
+    54-55°             14%    27¢    86¢    
+    56-57°             20%    19¢    91¢    
+    58° or above       53%     8¢    98¢    
+
+  Los Angeles  Fri Oct 23   forecast high 67.6°F  (range 64-71, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    66° or below       30%     1¢   100¢    
+    67-68°             36%     2¢    99¢    
+    69-70°             25%    10¢    91¢    BUY YES @ 10¢  edge +15¢
+    71-72°              8%    60¢    43¢    
+    73-74°              1%    27¢    75¢    
+    75° or above        0%     5¢    96¢    
+
+  Los Angeles low  Fri Oct 23   forecast low 57.8°F  (range 52-62, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    51° or below        2%     2¢    99¢    
+    52-53°              8%     2¢    99¢    
+    54-55°             16%     6¢    97¢    BUY YES @ 6¢  edge +10¢
+    56-57°             18%    10¢    96¢    BUY YES @ 10¢  edge +8¢
+    58-59°             21%    23¢    79¢    
+    60° or above       34%    73¢    34¢    
+
+  Denver  Fri Oct 23   forecast high 77.4°F  (range 75-80, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    75° or below       17%     4¢    97¢    
+    76-77°             35%    27¢    75¢    BUY YES @ 27¢  edge +6¢
+    78-79°             33%    61¢    40¢    
+    80-81°             13%    12¢    89¢    
+    82-83°              2%     2¢    99¢    
+    84° or above        0%     2¢    99¢    
+
+  Denver low  Fri Oct 23   forecast low 57.0°F  (range 49-62, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    50° or below        5%    18¢    91¢    
+    51-52°              7%    17¢    89¢    
+    53-54°             12%    37¢    80¢    BUY NO @ 80¢  edge +7¢
+    55-56°             17%    25¢    84¢    
+    57-58°             22%    21¢    96¢    
+    59° or above       37%     7¢    97¢    
+
+  Philadelphia  Fri Oct 23   forecast high 62.0°F  (range 58-65, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    58° or below        5%     2¢    99¢    
+    59-60°             20%     9¢    93¢    BUY YES @ 9¢  edge +10¢
+    61-62°             35%    46¢    55¢    BUY NO @ 55¢  edge +8¢
+    63-64°             28%    47¢    54¢    BUY NO @ 54¢  edge +17¢
+    65-66°             11%     4¢    97¢    
+    67° or above        2%     2¢   100¢    
+
+  Philadelphia low  Fri Oct 23   forecast low 42.9°F  (range 37-47, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    37° or below        2%     1¢   100¢    
+    38-39°              7%     2¢    99¢    
+    40-41°             19%     3¢    98¢    
+    42-43°             30%    18¢    85¢    BUY YES @ 18¢  edge +11¢
+    44-45°             25%    42¢    64¢    BUY NO @ 64¢  edge +9¢
+    46° or above       16%    42¢    63¢    BUY NO @ 63¢  edge +19¢
+
+  Phoenix  Fri Oct 23   forecast high 76.4°F  (range 73-80, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    74° or below       21%     1¢   100¢    
+    75-76°             30%     2¢    99¢    
+    77-78°             30%     7¢    94¢    
+    79-80°             15%    47¢    54¢    
+    81-82°              3%    44¢    57¢    
+    83° or above        0%     6¢    95¢    
+
+  Phoenix low  Fri Oct 23   forecast low 63.4°F  (range 57-69, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    56° or below        2%     4¢    99¢    
+    57-58°              9%     3¢    99¢    
+    59-60°             17%    11¢    94¢    
+    61-62°             16%    24¢    83¢    
+    63-64°             14%    45¢    64¢    
+    65° or above       42%    31¢    78¢    BUY YES @ 31¢  edge +10¢
+
+  Houston  Fri Oct 23   forecast high 84.7°F  (range 82-89, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    82° or below       16%     2¢    99¢    
+    83-84°             32%     3¢    98¢    
+    85-86°             33%    67¢    35¢    
+    87-88°             15%    33¢    69¢    BUY NO @ 69¢  edge +14¢
+    89-90°              4%     2¢   100¢    
+    91° or above        1%     1¢   100¢    
+
+  Houston low  Fri Oct 23   forecast low 60.7°F  (range 54-68, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    52° or below        1%     2¢    99¢    
+    53-54°              4%     2¢    99¢    
+    55-56°             11%     2¢    99¢    
+    57-58°             18%    28¢    84¢    
+    59-60°             21%    47¢    59¢    BUY NO @ 59¢  edge +18¢
+    61° or above       45%    33¢    77¢    BUY YES @ 33¢  edge +10¢
+
+  Dallas  Fri Oct 23   forecast high 83.7°F  (range 78-87, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    81° or below       18%     2¢    99¢    
+    82-83°             28%    25¢    76¢    
+    84-85°             31%    68¢    35¢    
+    86-87°             17%    10¢    91¢    BUY YES @ 10¢  edge +7¢
+    88-89°              5%     2¢    99¢    
+    90° or above        1%     1¢   100¢    
+
+  Dallas low  Fri Oct 23   forecast low 60.3°F  (range 55-66, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    50° or below        0%     2¢    99¢    
+    51-52°              0%     2¢    99¢    
+    53-54°              3%     2¢    99¢    
+    55-56°             10%     2¢    99¢    
+    57-58°             18%    24¢    86¢    
+    59° or above       68%    83¢    31¢    
+
+  San Antonio  Fri Oct 23   forecast high 84.9°F  (range 79-89, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    82° or below       15%     3¢    99¢    
+    83-84°             29%    48¢    59¢    BUY NO @ 59¢  edge +10¢
+    85-86°             32%    57¢    54¢    BUY NO @ 54¢  edge +12¢
+    87-88°             17%     4¢    97¢    
+    89-90°              5%     1¢   100¢    
+    91° or above        1%     1¢   100¢    
+
+  San Antonio low  Fri Oct 23   forecast low 60.1°F  (range 54-63, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    53° or below        2%     2¢    99¢    
+    54-55°              7%    10¢    96¢    
+    56-57°             13%    27¢    76¢    BUY NO @ 76¢  edge +10¢
+    58-59°             16%    45¢    65¢    BUY NO @ 65¢  edge +17¢
+    60-61°             25%    23¢    85¢    
+    62° or above       37%     3¢    98¢    
+
+  Minneapolis  Fri Oct 23   forecast high 72.6°F  (range 65-77, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    72° or below       45%    16¢    85¢    
+    73-74°             29%    34¢    69¢    
+    75-76°             19%    42¢    59¢    
+    77-78°              6%    10¢    91¢    
+    79-80°              1%     2¢    99¢    
+    81° or above        0%     2¢    99¢    
+
+  Minneapolis low  Fri Oct 23   forecast low 57.1°F  (range 53-61, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    50° or below        0%     2¢    99¢    
+    51-52°              3%     2¢    99¢    
+    53-54°             13%    11¢    92¢    
+    55-56°             27%    43¢    69¢    
+    57-58°             28%    41¢    68¢    
+    59° or above       29%    20¢    91¢    BUY YES @ 20¢  edge +8¢
+
+  Oklahoma City  Fri Oct 23   forecast high 78.0°F  (range 73-81, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    76° or below       25%     3¢    98¢    
+    77-78°             34%    12¢    89¢    
+    79-80°             29%    55¢    48¢    
+    81-82°             11%    37¢    69¢    BUY NO @ 69¢  edge +18¢
+    83-84°              2%     3¢    98¢    
+    85° or above        0%     2¢   100¢    
+
+  Oklahoma City low  Fri Oct 23   forecast low 57.7°F  (range 51-63, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    49° or below        1%     3¢    98¢    
+    50-51°              4%    11¢    96¢    
+    52-53°              9%    20¢    91¢    
+    54-55°             14%    41¢    71¢    BUY NO @ 71¢  edge +14¢
+    56-57°             18%    29¢    78¢    
+    58° or above       55%    17¢    89¢    
+
+  San Francisco  Fri Oct 23   forecast high 66.8°F  (range 64-71, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    64° or below       16%     2¢    99¢    
+    65-66°             30%     6¢    95¢    
+    67-68°             32%    51¢    51¢    BUY NO @ 51¢  edge +15¢
+    69-70°             17%    43¢    58¢    
+    71-72°              5%     5¢    96¢    
+    73° or above        1%     2¢   100¢    
+
+  San Francisco low  Fri Oct 23   forecast low 54.2°F  (range 51-58, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    49° or below        2%     2¢    99¢    
+    50-51°             11%     2¢    99¢    
+    52-53°             25%    11¢    97¢    BUY YES @ 11¢  edge +14¢
+    54-55°             31%    48¢    60¢    BUY NO @ 60¢  edge +7¢
+    56-57°             21%    47¢    63¢    BUY NO @ 63¢  edge +14¢
+    58° or above        9%    10¢    91¢    
+
+  Washington DC  Fri Oct 23   forecast high 63.8°F  (range 61-67, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    61° or below       18%     3¢    99¢    
+    62-63°             27%    23¢    78¢    
+    64-65°             29%    64¢    37¢    
+    66-67°             19%    16¢    85¢    
+    68-69°              6%     2¢   100¢    
+    70° or above        1%     2¢    99¢    
+
+  Washington DC low  Fri Oct 23   forecast low 47.5°F  (range 40-51, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    40° or below        1%     2¢    99¢    
+    41-42°              2%     2¢    99¢    
+    43-44°              9%     4¢    99¢    
+    45-46°             22%    26¢    82¢    
+    47-48°             31%    51¢    67¢    
+    49° or above       35%    44¢    70¢    
+
+  Boston  Fri Oct 23   forecast high 54.2°F  (range 51-58, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    49° or below        2%     2¢   100¢    
+    50-51°             11%     2¢    99¢    
+    52-53°             27%    20¢    81¢    
+    54-55°             32%    55¢    46¢    
+    56-57°             20%    26¢    75¢    
+    58° or above        9%     3¢    98¢    
+
+  Boston low  Fri Oct 23   forecast low 40.0°F  (range 36-45, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    35° or below        4%     2¢    99¢    
+    36-37°             15%     2¢    99¢    
+    38-39°             28%    13¢    91¢    BUY YES @ 13¢  edge +14¢
+    40-41°             24%    47¢    64¢    BUY NO @ 64¢  edge +10¢
+    42-43°             16%    44¢    72¢    BUY NO @ 72¢  edge +11¢
+    44° or above       13%    22¢    91¢    
+
+  Seattle  Fri Oct 23   forecast high 56.1°F  (range 53-59, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    54° or below       25%     5¢    96¢    BUY YES @ 5¢  edge +19¢
+    55-56°             32%    28¢    76¢    
+    57-58°             28%    59¢    42¢    
+    59-60°             12%    11¢    91¢    
+    61-62°              3%     2¢    99¢    
+    63° or above        0%     2¢   100¢    
+
+  Seattle low  Fri Oct 23   forecast low 44.5°F  (range 38-48, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    37° or below        2%     3¢    99¢    
+    38-39°              6%    10¢    97¢    
+    40-41°             11%    35¢    79¢    BUY NO @ 79¢  edge +9¢
+    42-43°             15%    54¢    66¢    BUY NO @ 66¢  edge +17¢
+    44-45°             23%    26¢    83¢    
+    46° or above       43%     2¢    99¢    
+
+  Las Vegas  Fri Oct 23   forecast high 69.2°F  (range 65-73, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    65° or below        7%     1¢   100¢    
+    66-67°             17%     2¢    99¢    
+    68-69°             29%    24¢    80¢    
+    70-71°             28%    58¢    43¢    
+    72-73°             14%    17¢    85¢    
+    74° or above        4%     2¢    99¢    
+
+  Las Vegas low  Fri Oct 23   forecast low 53.8°F  (range 49-58, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    46° or below        0%     3¢    99¢    
+    47-48°              4%     4¢    98¢    
+    49-50°             13%     6¢    97¢    BUY YES @ 6¢  edge +7¢
+    51-52°             20%     6¢    96¢    BUY YES @ 6¢  edge +13¢
+    53-54°             19%    15¢    91¢    
+    55° or above       44%    82¢    26¢    
+
+  Atlanta  Fri Oct 23   forecast high 71.5°F  (range 69-77, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    67° or below        4%     1¢   100¢    
+    68-69°             17%     1¢   100¢    
+    70-71°             32%     8¢    93¢    
+    72-73°             26%    34¢    67¢    
+    74-75°             13%    58¢    43¢    
+    76° or above        7%     4¢    97¢    
+
+  Atlanta low  Fri Oct 23   forecast low 50.9°F  (range 44-58, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    44° or below        4%     2¢    99¢    
+    45-46°              8%     2¢    99¢    
+    47-48°             15%     9¢    93¢    
+    49-50°             22%    16¢    86¢    
+    51-52°             20%    38¢    63¢    BUY NO @ 63¢  edge +15¢
+    53° or above       32%    46¢    60¢    BUY NO @ 60¢  edge +6¢
+
+  New Orleans  Fri Oct 23   forecast high 79.8°F  (range 77-87, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    78° or below       38%     3¢    99¢    
+    79-80°             25%    24¢    77¢    
+    81-82°             17%    60¢    41¢    
+    83-84°             10%    14¢    87¢    
+    85-86°              6%     2¢    99¢    
+    87° or above        3%     1¢   100¢    
+
+  New Orleans low  Fri Oct 23   forecast low 62.0°F  (range 56-66, NBM-anchored)
+    bracket          model yes ask  no ask   signal
+    53° or below        0%    10¢    94¢    
+    54-55°              1%    20¢    83¢    BUY NO @ 83¢  edge +15¢
+    56-57°              7%    31¢    77¢    BUY NO @ 77¢  edge +15¢
+    58-59°             17%    34¢    79¢    
+    60-61°             20%    17¢    89¢    
+    62° or above       54%     8¢    96¢    
+
+============================================================
+13 new paper trade(s) logged to paper_trades.csv:
+  Chicago        2026-10-23  69-70°       BUY YES @ 7¢  edge +20¢
+  Chicago        2026-10-23  73-74°       BUY NO  @ 59¢  edge +18¢
+  Philadelphia   2026-10-23  61-62°       BUY NO  @ 55¢  edge +8¢
+  Philadelphia low 2026-10-23  44-45°       BUY NO  @ 64¢  edge +9¢
+  Philadelphia low 2026-10-23  46° or above BUY NO  @ 63¢  edge +19¢
+  Dallas         2026-10-23  86-87°       BUY YES @ 10¢  edge +7¢
+  San Antonio    2026-10-23  83-84°       BUY NO  @ 59¢  edge +10¢
+  San Antonio    2026-10-23  85-86°       BUY NO  @ 54¢  edge +12¢
+  San Antonio low 2026-10-23  56-57°       BUY NO  @ 76¢  edge +10¢
+  Minneapolis low 2026-10-23  59° or above BUY YES @ 20¢  edge +8¢
+  Oklahoma City  2026-10-23  81-82°       BUY NO  @ 69¢  edge +18¢
+  Boston low     2026-10-23  38-39°       BUY YES @ 13¢  edge +14¢
+  Atlanta low    2026-10-23  53° or above BUY NO  @ 60¢  edge +6¢
+Run  python3 report.py  after markets settle to see results.
+Dashboard updated: open dashboard.html
