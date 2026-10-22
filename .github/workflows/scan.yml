@@ -1,0 +1,42 @@
+name: Weather bot scan
+
+on:
+  schedule:
+    - cron: "5 12 * * *"   # ~7am Central (6am after DST ends)
+    - cron: "5 23 * * *"   # ~6pm Central (5pm after DST ends)
+  workflow_dispatch:        # lets you run it by hand from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: weather-bot
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Settle finished trades
+        run: python3 report.py >> scan_log.txt 2>&1 || true
+
+      - name: Scan markets
+        run: python3 scan.py >> scan_log.txt 2>&1
+
+      - name: Publish dashboard
+        run: |
+          mkdir -p docs
+          cp dashboard.html docs/index.html
+          touch docs/.nojekyll
+
+      - name: Save results
+        run: |
+          git config user.name "weather-bot"
+          git config user.email "weather-bot@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Scan $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git pull --rebase
+          git push
