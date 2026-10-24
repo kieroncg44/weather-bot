@@ -2335,3 +2335,277 @@ Weather bot scan  2026-10-23 23:20 UTC   (paper trading only)
   Atlanta low    2026-10-24  46-47°       BUY YES @ 7¢  edge +9¢
 Run  python3 report.py  after markets settle to see results.
 Dashboard updated: open dashboard.html
+
+PAPER TRADING SCORECARD
+============================================================
+Settled trades: 89    Still open: 92
+Total P&L:      $-63.73   on $412.80 risked  (ROI -15.4%)
+Win rate:       36/89 = 40%   (model expected 59%)
+
+By city:
+  Boston           3 trades   $  +15.37
+  Miami            4 trades   $  +13.14
+  San Francisco    2 trades   $  +10.07
+  Minneapolis      4 trades   $   +6.55
+  New Orleans      4 trades   $   +3.65
+  Houston          1 trades   $   +3.14
+  Denver           3 trades   $   +2.90
+  Atlanta          1 trades   $   +2.46
+  Oklahoma City low   1 trades   $   +2.46
+  Dallas           3 trades   $   +0.89
+  Austin           3 trades   $   +0.83
+  Philadelphia     4 trades   $   -1.40
+  Minneapolis low   1 trades   $   -2.12
+  Atlanta low      3 trades   $   -3.18
+  Chicago          5 trades   $   -3.32
+  San Antonio low   2 trades   $   -4.49
+  San Antonio      5 trades   $   -4.85
+  Philadelphia low   3 trades   $   -4.95
+  Austin low       3 trades   $   -5.01
+  New York         5 trades   $   -5.39
+  Washington DC    4 trades   $   -5.47
+  New Orleans low   2 trades   $   -5.56
+  Boston low       3 trades   $   -5.69
+  Las Vegas        2 trades   $   -5.94
+  Washington DC low   1 trades   $   -6.86
+  Phoenix          4 trades   $   -7.18
+  Dallas low       1 trades   $   -7.35
+  Chicago low      3 trades   $   -8.68
+  Seattle          2 trades   $   -9.15
+  Oklahoma City    3 trades   $   -9.20
+  Miami low        2 trades   $   -9.26
+  Houston low      2 trades   $  -10.14
+
+Note: under ~100 settled trades, results are mostly luck. Keep paper trading.
+
+Forecast error (actual minus our forecast, °F):
+  Atlanta low    avg +3.1 over 1 day(s)
+  Austin         avg +0.7 over 1 day(s)
+  Austin low     avg -5.7 over 1 day(s)
+  Boston         avg -1.2 over 1 day(s)
+  Boston low     avg +3.2 over 1 day(s)
+  Chicago        avg +0.2 over 1 day(s)
+  Chicago low    avg -1.6 over 1 day(s)
+  Dallas         avg +0.8 over 1 day(s)
+  Dallas low     avg -2.3 over 1 day(s)
+  Houston        avg +0.4 over 1 day(s)
+  Houston low    avg -0.4 over 1 day(s)
+  Miami          avg +0.9 over 1 day(s)
+  Miami low      avg +0.0 over 1 day(s)
+  Minneapolis    avg +2.5 over 1 day(s)
+  Minneapolis low avg -0.7 over 1 day(s)
+  New Orleans    avg +2.0 over 1 day(s)
+  New Orleans low avg -7.0 over 1 day(s)
+  New York       avg +0.4 over 1 day(s)
+  Oklahoma City  avg +0.6 over 1 day(s)
+  Oklahoma City low avg -4.5 over 1 day(s)
+  Philadelphia   avg +0.4 over 1 day(s)
+  Philadelphia low avg +1.4 over 1 day(s)
+  San Antonio    avg -1.4 over 1 day(s)
+  San Antonio low avg -1.9 over 1 day(s)
+  Washington DC  avg +0.0 over 1 day(s)
+  Washington DC low avg +2.3 over 1 day(s)
+Once a city has 10+ days, put its average into BIAS_F in config.py.
+
+Dashboard updated: open dashboard.html
+Weather bot scan  2026-10-24 12:32 UTC   (paper trading only)
+
+  New York  Sat Oct 24   forecast high 61.8°F  (range 59-65, anchored)
+    bracket          model yes ask  no ask   signal
+    58° or below        6%     1¢   100¢    
+    59-60°             22%    14¢    87¢    BUY YES @ 14¢  edge +7¢
+    61-62°             35%    75¢    26¢    
+    63-64°             26%    13¢    88¢    BUY YES @ 13¢  edge +12¢
+    65-66°              9%     1¢   100¢    
+    67° or above        2%     1¢   100¢    
+
+  Chicago  Sat Oct 24   forecast high 70.7°F  (range 67-73, anchored)
+    bracket          model yes ask  no ask   signal
+    67° or below        6%     2¢    99¢    
+    68-69°             22%    10¢    92¢    BUY YES @ 10¢  edge +12¢
+    70-71°             37%    63¢    38¢    
+    72-73°             26%    27¢    74¢    
+    74-75°              7%     2¢   100¢    
+    76° or above        1%     2¢   100¢    
+
+  Miami  Sat Oct 24   forecast high 82.4°F  (range 80-85, anchored)
+    bracket          model yes ask  no ask   signal
+    79° or below        9%     1¢   100¢    
+    80-81°             25%     2¢    99¢    
+    82-83°             35%    26¢    75¢    BUY YES @ 26¢  edge +7¢
+    84-85°             23%    70¢    32¢    
+    86-87°              7%     4¢    97¢    
+    88° or above        1%     1¢   100¢    
+
+  Austin  Sat Oct 24   forecast high 85.7°F  (range 81-89, anchored)
+    bracket          model yes ask  no ask   signal
+    84° or below       30%     2¢    99¢    
+    85-86°             35%    15¢    86¢    BUY YES @ 15¢  edge +19¢
+    87-88°             25%    82¢    21¢    
+    89-90°              9%     6¢    95¢    
+    91-92°              1%     1¢   100¢    
+    93° or above        0%     1¢   100¢    
+
+  Los Angeles  Sat Oct 24   forecast high 77.7°F  (range 75-83, anchored)
+    bracket          model yes ask  no ask   signal
+    70° or below        0%     1¢   100¢    
+    71-72°              1%     1¢   100¢    
+    73-74°              9%     4¢    97¢    
+    75-76°             26%    41¢    60¢    BUY NO @ 60¢  edge +13¢
+    77-78°             31%    49¢    52¢    BUY NO @ 52¢  edge +16¢
+    79° or above       34%    12¢    89¢    
+
+  Denver  Sat Oct 24   forecast high 56.5°F  (range 51-60, anchored)
+    bracket          model yes ask  no ask   signal
+    52° or below        6%     1¢   100¢    
+    53-54°             15%     1¢   100¢    
+    55-56°             29%     1¢   100¢    
+    57-58°             30%    92¢     9¢    
+    59-60°             16%    11¢    94¢    
+    61° or above        5%     2¢    99¢    
+
+  Philadelphia  Sat Oct 24   forecast high 62.3°F  (range 60-65, anchored)
+    bracket          model yes ask  no ask   signal
+    60° or below       20%     2¢   100¢    
+    61-62°             34%     5¢    96¢    
+    63-64°             30%    63¢    38¢    
+    65-66°             13%    35¢    66¢    BUY NO @ 66¢  edge +20¢
+    67-68°              3%     2¢    99¢    
+    69° or above        0%     1¢   100¢    
+
+  Phoenix  Sat Oct 24   forecast high 78.7°F  (range 74-82, anchored)
+    bracket          model yes ask  no ask   signal
+    74° or below        5%     1¢   100¢    
+    75-76°             13%     2¢    99¢    
+    77-78°             27%     8¢    93¢    BUY YES @ 8¢  edge +18¢
+    79-80°             32%    49¢    52¢    BUY NO @ 52¢  edge +15¢
+    81-82°             18%    42¢    59¢    
+    83° or above        5%     4¢    97¢    
+
+  Houston  Sat Oct 24   forecast high 83.5°F  (range 81-86, anchored)
+    bracket          model yes ask  no ask   signal
+    82° or below       31%     1¢   100¢    
+    83-84°             39%    36¢    65¢    
+    85-86°             24%    66¢    35¢    
+    87-88°              6%     2¢    99¢    
+    89-90°              0%     1¢   100¢    
+    91° or above        0%     1¢   100¢    
+
+  Dallas  Sat Oct 24   forecast high 82.8°F  (range 79-85, anchored)
+    bracket          model yes ask  no ask   signal
+    81° or below       26%     1¢   100¢    
+    82-83°             37%    20¢    81¢    BUY YES @ 20¢  edge +15¢
+    84-85°             28%    76¢    26¢    
+    86-87°              8%     5¢    96¢    
+    88-89°              1%     1¢   100¢    
+    90° or above        0%     1¢   100¢    
+
+  San Antonio  Sat Oct 24   forecast high 78.5°F  (range 72-82, anchored)
+    bracket          model yes ask  no ask   signal
+    83° or below       98%    29¢    72¢    
+    84-85°              2%    51¢    50¢    
+    86-87°              0%    19¢    82¢    BUY NO @ 82¢  edge +17¢
+    88-89°              0%     1¢   100¢    
+    90-91°              0%     1¢   100¢    
+    92° or above        0%     1¢   100¢    
+
+  Minneapolis  Sat Oct 24   forecast high 72.8°F  (range 69-76, anchored)
+    bracket          model yes ask  no ask   signal
+    71° or below       29%     2¢    99¢    
+    72-73°             35%    14¢    87¢    BUY YES @ 14¢  edge +20¢
+    74-75°             26%    53¢    48¢    
+    76-77°              9%    28¢    73¢    BUY NO @ 73¢  edge +16¢
+    78-79°              1%     4¢    97¢    
+    80° or above        0%     1¢   100¢    
+
+  Oklahoma City  Sat Oct 24   forecast high 78.4°F  (range 75-81, anchored)
+    bracket          model yes ask  no ask   signal
+    76° or below       19%     1¢   100¢    
+    77-78°             34%     5¢    96¢    
+    79-80°             32%    69¢    32¢    
+    81-82°             13%    30¢    71¢    BUY NO @ 71¢  edge +14¢
+    83-84°              3%     2¢    99¢    
+    85° or above        0%     1¢   100¢    
+
+  San Francisco  Sat Oct 24   forecast high 71.7°F  (range 69-75, anchored)
+    bracket          model yes ask  no ask   signal
+    67° or below        4%     1¢   100¢    
+    68-69°             16%    11¢    90¢    
+    70-71°             30%    49¢    52¢    BUY NO @ 52¢  edge +16¢
+    72-73°             27%    32¢    69¢    
+    74-75°             16%     8¢    93¢    BUY YES @ 8¢  edge +8¢
+    76° or above        8%     2¢   100¢    
+
+  Washington DC  Sat Oct 24   forecast high 63.0°F  (range 60-66, anchored)
+    bracket          model yes ask  no ask   signal
+    61° or below       24%     2¢    99¢    
+    62-63°             37%    29¢    72¢    BUY YES @ 29¢  edge +7¢
+    64-65°             29%    69¢    32¢    
+    66-67°              9%     5¢    96¢    
+    68-69°              1%     1¢   100¢    
+    70° or above        0%     1¢   100¢    
+
+  Boston  Sat Oct 24   forecast high 56.5°F  (range 54-61, anchored)
+    bracket          model yes ask  no ask   signal
+    56° or below       53%     8¢    93¢    
+    57-58°             25%    49¢    52¢    
+    59-60°             15%    35¢    66¢    BUY NO @ 66¢  edge +18¢
+    61-62°              6%     5¢    96¢    
+    63-64°              1%     1¢   100¢    
+    65° or above        0%     1¢   100¢    
+
+  Seattle  Sat Oct 24   forecast high 56.1°F  (range 51-60, anchored)
+    bracket          model yes ask  no ask   signal
+    53° or below       16%     6¢    95¢    BUY YES @ 6¢  edge +10¢
+    54-55°             24%    42¢    59¢    BUY NO @ 59¢  edge +16¢
+    56-57°             29%    41¢    60¢    BUY NO @ 60¢  edge +9¢
+    58-59°             21%    11¢    90¢    BUY YES @ 11¢  edge +9¢
+    60-61°              8%     1¢   100¢    
+    62° or above        2%     1¢   100¢    
+
+  Las Vegas  Sat Oct 24   forecast high 75.8°F  (range 72-78, anchored)
+    bracket          model yes ask  no ask   signal
+    72° or below        6%     2¢   100¢    
+    73-74°             20%    20¢    83¢    
+    75-76°             35%    71¢    30¢    
+    77-78°             28%     8¢    93¢    BUY YES @ 8¢  edge +20¢
+    79-80°              9%     1¢   100¢    
+    81° or above        1%     1¢   100¢    
+
+  Atlanta  Sat Oct 24   forecast high 69.9°F  (range 67-75, anchored)
+    bracket          model yes ask  no ask   signal
+    66° or below        6%     1¢   100¢    
+    67-68°             22%     5¢    96¢    BUY YES @ 5¢  edge +16¢
+    69-70°             36%    46¢    55¢    BUY NO @ 55¢  edge +7¢
+    71-72°             24%    53¢    48¢    
+    73-74°              9%     2¢    99¢    
+    75° or above        4%     1¢   100¢    
+
+  New Orleans  Sat Oct 24   forecast high 77.8°F  (range 75-83, anchored)
+    bracket          model yes ask  no ask   signal
+    75° or below       20%     1¢   100¢    
+    76-77°             29%     5¢    96¢    
+    78-79°             26%    59¢    42¢    
+    80-81°             16%    39¢    62¢    
+    82-83°              8%     2¢   100¢    
+    84° or above        3%     1¢   100¢    
+
+============================================================
+15 new paper trade(s) logged to paper_trades.csv:
+  New York       2026-10-24  59-60°       BUY YES @ 14¢  edge +7¢
+  New York       2026-10-24  63-64°       BUY YES @ 13¢  edge +12¢
+  Miami          2026-10-24  82-83°       BUY YES @ 26¢  edge +8¢
+  Los Angeles    2026-10-24  75-76°       BUY NO  @ 60¢  edge +13¢
+  Los Angeles    2026-10-24  77-78°       BUY NO  @ 52¢  edge +16¢
+  Phoenix        2026-10-24  79-80°       BUY NO  @ 52¢  edge +14¢
+  Dallas         2026-10-24  82-83°       BUY YES @ 20¢  edge +15¢
+  San Francisco  2026-10-24  70-71°       BUY NO  @ 52¢  edge +16¢
+  San Francisco  2026-10-24  74-75°       BUY YES @ 8¢  edge +8¢
+  Boston         2026-10-24  59-60°       BUY NO  @ 66¢  edge +18¢
+  Seattle        2026-10-24  54-55°       BUY NO  @ 59¢  edge +16¢
+  Seattle        2026-10-24  56-57°       BUY NO  @ 60¢  edge +9¢
+  Seattle        2026-10-24  58-59°       BUY YES @ 11¢  edge +9¢
+  Atlanta        2026-10-24  67-68°       BUY YES @ 5¢  edge +16¢
+  Atlanta        2026-10-24  69-70°       BUY NO  @ 55¢  edge +7¢
+Run  python3 report.py  after markets settle to see results.
+Dashboard updated: open dashboard.html
