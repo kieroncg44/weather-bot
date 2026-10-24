@@ -92,7 +92,7 @@ def scan_city(series, city, seen, now, kind="high"):
         print("\n  %s  %s   forecast %s %.1f°F  (range %.0f-%.0f, %s)" % (
             name, d.strftime("%a %b %d"), kind, mean,
             min(highs) + bias, max(highs) + bias,
-            "NBM-anchored" if d in anchors else "ensemble only"))
+            "anchored" if d in anchors else "ensemble only"))
         print("    %-14s %7s %7s %7s   %s" % ("bracket", "model", "yes ask", "no ask", "signal"))
         card = {"city": city["name"], "kind": kind, "date": str(d), "forecast": round(mean, 1),
                 "low": round(min(highs) + bias, 1), "high": round(max(highs) + bias, 1),

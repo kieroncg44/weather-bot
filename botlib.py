@@ -190,36 +190,49 @@ def ensemble_highs(city, days, kind="high"):
     return out
 
 
-def anchor_high(city, days, kind="high"):
-    pick = max if kind == "high" else min
-    """Best single forecast of the high at the station, hour by hour.
-    Uses the National Blend of Models (what NWS forecasters start from);
-    falls back to Open-Meteo's default blend if NBM isn't available."""
+def _hourly_extreme(city, days, pick, model):
+    """Daily high (or low) per day from one hourly forecast model."""
+    params = {"latitude": city["lat"], "longitude": city["lon"],
+              "hourly": "temperature_2m", "temperature_unit": "fahrenheit",
+              "timezone": "GMT", "past_days": 1, "forecast_days": 4}
+    if model:
+        params["models"] = model
+    try:
+        data = get_json(config.OPEN_METEO_FORECAST, params)
+    except Exception:
+        return {}
+    hourly = data.get("hourly", {})
+    key = next((k for k in hourly if k.startswith("temperature_2m")), None)
+    if not key:
+        return {}
+    times = [datetime.strptime(t, "%Y-%m-%dT%H:%M").replace(tzinfo=timezone.utc)
+             for t in hourly.get("time", [])]
     out = {}
-    for models in (config.ANCHOR_MODEL, None):
-        params = {"latitude": city["lat"], "longitude": city["lon"],
-                  "hourly": "temperature_2m", "temperature_unit": "fahrenheit",
-                  "timezone": "GMT", "past_days": 1, "forecast_days": 4}
-        if models:
-            params["models"] = models
-        try:
-            data = get_json(config.OPEN_METEO_FORECAST, params)
-        except Exception:
-            continue
-        hourly = data.get("hourly", {})
-        key = next((k for k in hourly if k.startswith("temperature_2m")), None)
-        if not key:
-            continue
-        times = [datetime.strptime(t, "%Y-%m-%dT%H:%M").replace(tzinfo=timezone.utc)
-                 for t in hourly.get("time", [])]
-        for d in days:
-            start, end = _climate_day_bounds(d, city["tz"])
-            vals = [hourly[key][i] for i, t in enumerate(times)
-                    if start <= t < end and hourly[key][i] is not None]
-            if len(vals) >= 18 and d not in out:
-                out[d] = pick(vals)
-        if len(out) == len(days):
-            break
+    for d in days:
+        start, end = _climate_day_bounds(d, city["tz"])
+        vals = [hourly[key][i] for i, t in enumerate(times)
+                if start <= t < end and hourly[key][i] is not None]
+        if len(vals) >= 18:
+            out[d] = pick(vals)
+    return out
+
+
+def anchor_high(city, days, kind="high"):
+    """Best single estimate of the day's high (or low) at the station.
+    Blends Open-Meteo's best US model mix (HRRR for the next day or two, then GFS)
+    with the National Blend of Models. On day one NBM ran 4-10F too cold in a few
+    cities (Phoenix, Boston, DC), so when the two disagree by more than
+    ANCHOR_MAX_GAP_F we trust the best-match mix alone."""
+    pick = max if kind == "high" else min
+    best = _hourly_extreme(city, days, pick, None)
+    nbm = _hourly_extreme(city, days, pick, config.ANCHOR_MODEL)
+    out = {}
+    for d in days:
+        b, n = best.get(d), nbm.get(d)
+        if b is not None and n is not None:
+            out[d] = (b + n) / 2 if abs(b - n) <= config.ANCHOR_MAX_GAP_F else b
+        elif b is not None or n is not None:
+            out[d] = b if b is not None else n
     return out
 
 

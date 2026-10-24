@@ -49,6 +49,9 @@ MAX_EDGE = 0.20
 # The ensemble then only supplies the uncertainty around it.
 ANCHOR_MODEL = "ncep_nbm_conus"
 
+# If NBM and the best-match model disagree by more than this, ignore NBM.
+ANCHOR_MAX_GAP_F = 3.0
+
 # Skip contracts priced outside this range (cents). Very cheap/expensive ones
 # are where models are least reliable and fees bite hardest relative to profit.
 MIN_PRICE = 5
