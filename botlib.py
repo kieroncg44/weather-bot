@@ -281,6 +281,13 @@ def best_trade(prob, mkt, contracts):
         no_ask = 100 - mkt["yes_bid"]
     if no_ask:
         options.append(("NO", no_ask, 1 - prob))
+    # Meet the market partway. Early results showed the model was overconfident
+    # (trades it rated 82% won 59%), so trust the crowd's price for part of the answer.
+    if mkt["yes_ask"] and no_ask:
+        market_p = (mkt["yes_ask"] + (100 - no_ask)) / 200.0
+        blended = (1 - config.MARKET_WEIGHT) * prob + config.MARKET_WEIGHT * market_p
+        options = [(side, price, blended if side == "YES" else 1 - blended)
+                   for side, price, _ in options]
     best = None
     for side, price, p_win in options:
         if not (config.MIN_PRICE <= price <= config.MAX_PRICE):

@@ -41,6 +41,10 @@ BIAS_F = {}
 # AFTER fees. 0.06 = 6 cents per $1 contract.
 MIN_EDGE = 0.06
 
+# How much to lean on the market's own price (0 = ignore market, 1 = copy it).
+# 0.5 means a trade needs the model to disagree with the crowd by a wide margin.
+MARKET_WEIGHT = 0.5
+
 # Ignore "edges" bigger than this. A 30-cent edge on a busy market almost
 # always means our model is off, not that traders are leaving free money.
 MAX_EDGE = 0.20
@@ -75,7 +79,7 @@ SAME_DAY_CUTOFF_HOUR = 11
 
 # Daily LOW markets: only trade future days. The low is usually set around
 # dawn, so by morning traders can already see today's answer.
-TRADE_LOWS = True
+TRADE_LOWS = False   # off Oct 24: lows won 30% vs 68% expected
 
 # Need at least this many ensemble members to trust a probability.
 MIN_MEMBERS = 20
