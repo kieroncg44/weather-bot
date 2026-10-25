@@ -1,18 +1,57 @@
 city,date,actual
 Atlanta,2026-10-22,76.0
+Atlanta low,2026-10-23,54.0
 Austin,2026-10-22,87.0
+Austin,2026-10-23,87.0
+Austin low,2026-10-23,52.0
 Boston,2026-10-22,65.0
+Boston,2026-10-23,53.0
+Boston low,2026-10-23,43.0
 Chicago,2026-10-22,72.0
+Chicago,2026-10-23,71.0
+Chicago low,2026-10-23,49.0
 Dallas,2026-10-22,83.0
+Dallas,2026-10-23,85.0
+Dallas low,2026-10-23,58.0
 Denver,2026-10-22,74.0
+Denver,2026-10-23,77.0
+Denver low,2026-10-23,58.0
+Houston,2026-10-23,86.0
+Houston low,2026-10-23,60.0
 Las Vegas,2026-10-22,77.0
+Las Vegas,2026-10-23,70.0
+Las Vegas low,2026-10-23,56.0
+Los Angeles,2026-10-23,72.0
+Los Angeles low,2026-10-23,59.0
 Miami,2026-10-22,80.0
+Miami,2026-10-23,82.0
+Miami low,2026-10-23,71.0
 Minneapolis,2026-10-22,75.0
+Minneapolis,2026-10-23,76.0
+Minneapolis low,2026-10-23,56.0
 New Orleans,2026-10-22,82.0
+New Orleans,2026-10-23,82.0
+New Orleans low,2026-10-23,55.0
 New York,2026-10-22,67.0
+New York,2026-10-23,59.0
+New York low,2026-10-23,47.0
 Oklahoma City,2026-10-22,80.0
+Oklahoma City,2026-10-23,79.0
+Oklahoma City low,2026-10-23,53.0
+Philadelphia,2026-10-23,62.0
+Philadelphia low,2026-10-23,44.0
 Phoenix,2026-10-22,89.0
+Phoenix,2026-10-23,82.0
+Phoenix low,2026-10-23,64.0
 San Antonio,2026-10-22,86.0
+San Antonio,2026-10-23,84.0
+San Antonio low,2026-10-23,58.0
 San Francisco,2026-10-22,63.0
+San Francisco,2026-10-23,69.0
+San Francisco low,2026-10-23,56.0
 Seattle,2026-10-22,60.0
+Seattle,2026-10-23,58.0
+Seattle low,2026-10-23,44.0
 Washington DC,2026-10-22,70.0
+Washington DC,2026-10-23,64.0
+Washington DC low,2026-10-23,49.0
