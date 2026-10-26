@@ -22,6 +22,9 @@ BOARD = []  # everything the last scan saw, for the dashboard
 TRADE_COLS = ["logged_at", "city", "date", "ticker", "bracket", "side", "price_cents",
               "contracts", "fee_per_contract", "model_prob_win", "edge",
               "status", "result", "pnl"]
+OPPS = os.path.join(HERE, "opportunities.csv")
+OPP_COLS = ["logged_at", "city", "date", "ticker", "bracket", "model_prob_yes",
+            "yes_ask", "no_ask", "signal_side", "signal_edge"]
 FC_COLS = ["logged_at", "city", "date", "members", "mean_high", "min_high", "max_high",
            "raw_ensemble_mean", "anchor_high"]
 
@@ -36,12 +39,16 @@ def _append(path, cols, row):
 
 
 def _already_logged():
-    seen = set()
-    if os.path.exists(TRADES):
+    """Tickers already traded, plus city-days already traded since the freeze began
+    (at most one trade per city per day)."""
+    seen, days = set(), set()
+    if os.path.exists(TRADES) and os.path.getsize(TRADES) > 0:
         with open(TRADES, newline="") as f:
             for r in csv.DictReader(f):
                 seen.add((r["ticker"], r["side"]))
-    return seen
+                if r["logged_at"] >= config.FREEZE_START:
+                    days.add((r["city"], r["date"]))
+    return seen, days
 
 
 def _too_late(d, tz, kind="high"):
@@ -55,7 +62,7 @@ def _too_late(d, tz, kind="high"):
     return d == now_local.date() and now_local.hour >= config.SAME_DAY_CUTOFF_HOUR
 
 
-def scan_city(series, city, seen, now, kind="high"):
+def scan_city(series, city, seen, days_traded, now, kind="high"):
     name = city["name"] + (" low" if kind == "low" else "")
     try:
         markets = botlib.open_markets(series)
@@ -74,7 +81,7 @@ def scan_city(series, city, seen, now, kind="high"):
         print("  %-14s skipped (forecast: %s)" % (name, e))
         return []
 
-    bias = config.BIAS_F.get(series, 0.0)
+    bias = config.BIAS_F.get(series, config.HIGH_BIAS_F if kind == "high" else 0.0)
     signals = []
     for d in days:
         raw = highs_by_day.get(d, [])
@@ -98,6 +105,7 @@ def scan_city(series, city, seen, now, kind="high"):
                 "low": round(min(highs) + bias, 1), "high": round(max(highs) + bias, 1),
                 "anchored": d in anchors, "rows": []}
         BOARD.append(card)
+        candidates = []
 
         for m in sorted(markets, key=lambda x: (x["bracket"][0] if x["bracket"][0] is not None else -999)):
             if m["date"] != d:
@@ -117,18 +125,34 @@ def scan_city(series, city, seen, now, kind="high"):
                 "yes_ask": m["yes_ask"], "no_ask": no_ask,
                 "side": t["side"] if t else None, "price": t["price"] if t else None,
                 "edge": round(t["edge"], 3) if t else None})
+            _append(OPPS, OPP_COLS, {
+                "logged_at": now, "city": name, "date": d, "ticker": m["ticker"],
+                "bracket": botlib.bracket_label(m["bracket"]), "model_prob_yes": round(p, 4),
+                "yes_ask": m["yes_ask"], "no_ask": no_ask,
+                "signal_side": t["side"] if t else "", "signal_edge": round(t["edge"], 3) if t else ""})
             if t and (m["ticker"], t["side"]) not in seen:
-                seen.add((m["ticker"], t["side"]))
-                row = {"logged_at": now, "city": name, "date": d,
-                       "ticker": m["ticker"], "bracket": botlib.bracket_label(m["bracket"]),
-                       "side": t["side"], "price_cents": t["price"],
-                       "contracts": config.PAPER_CONTRACTS,
-                       "fee_per_contract": round(t["fee"], 4),
-                       "model_prob_win": round(t["p_win"], 3),
-                       "edge": round(t["edge"], 3), "status": "open",
-                       "result": "", "pnl": ""}
-                _append(TRADES, TRADE_COLS, row)
-                signals.append(row)
+                candidates.append((t, m))
+
+        # Sit out unsettled days (fronts, storms): forecast runs disagree too much.
+        if max(highs) - min(highs) > config.MAX_FORECAST_RANGE_F:
+            print("    (no trade: forecast runs too spread out, %.0f-%.0f)" % (min(highs) + bias, max(highs) + bias))
+            candidates = []
+
+        # Only the single best trade per city per day.
+        if candidates and (name, str(d)) not in days_traded:
+            t, m = max(candidates, key=lambda c: c[0]["edge"])
+            seen.add((m["ticker"], t["side"]))
+            days_traded.add((name, str(d)))
+            row = {"logged_at": now, "city": name, "date": d,
+                   "ticker": m["ticker"], "bracket": botlib.bracket_label(m["bracket"]),
+                   "side": t["side"], "price_cents": t["price"],
+                   "contracts": config.PAPER_CONTRACTS,
+                   "fee_per_contract": round(t["fee"], 4),
+                   "model_prob_win": round(t["p_win"], 3),
+                   "edge": round(t["edge"], 3), "status": "open",
+                   "result": "", "pnl": ""}
+            _append(TRADES, TRADE_COLS, row)
+            signals.append(row)
     return signals
 
 
@@ -136,14 +160,14 @@ def main():
     only = " ".join(sys.argv[1:]).lower()
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
     print("Weather bot scan  %s   (paper trading only)" % now)
-    seen = _already_logged()
+    seen, days_traded = _already_logged()
     new = []
     for series, city in config.CITIES.items():
         if only and only not in city["name"].lower():
             continue
-        new += scan_city(series, city, seen, now)
+        new += scan_city(series, city, seen, days_traded, now)
         if config.TRADE_LOWS and city.get("low"):
-            new += scan_city(city["low"], city, seen, now, kind="low")
+            new += scan_city(city["low"], city, seen, days_traded, now, kind="low")
 
     print("\n" + "=" * 60)
     if new:

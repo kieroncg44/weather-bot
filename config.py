@@ -1,3 +1,9 @@
+# =====================================================================
+# SETTINGS FROZEN from Oct 26 to Nov 9, 2026. Judge this version only on
+# trades logged after FREEZE_START. Change only to fix something broken.
+# =====================================================================
+FREEZE_START = "2026-10-26 19:00"   # UTC, matches the logged_at format
+
 """Settings for the weather bot. Edit these, not the other files."""
 
 # Each Kalshi "highest temperature" series (and its matching "low" series), and the exact weather station it
@@ -31,11 +37,15 @@ ENSEMBLE_MODELS = ["gfs_seamless", "ecmwf_ifs025", "icon_seamless"]
 
 # Ensembles are known to be over-confident. Each member is blurred by this
 # many degrees F before counting. Bigger = more humble. Tune later from results.
-SPREAD_F = 1.8
+SPREAD_F = 0.8   # was 1.8: capped any bracket at 42%, far wider than real errors (~2.1F)
 
 # Per-city warm/cold correction in degrees F (+ means the model runs cold).
 # Leave at 0 until report.py has enough settled days to estimate it.
 BIAS_F = {}
+
+# Default warm correction for daily HIGHS (forecasts ran ~1F cold Oct 22-25;
+# we correct half of that until there's more data).
+HIGH_BIAS_F = 0.5
 
 # Only paper-trade when our probability beats the price by at least this much
 # AFTER fees. 0.06 = 6 cents per $1 contract.
@@ -80,6 +90,10 @@ SAME_DAY_CUTOFF_HOUR = 11
 # Daily LOW markets: only trade future days. The low is usually set around
 # dawn, so by morning traders can already see today's answer.
 TRADE_LOWS = False   # off Oct 24: lows won 30% vs 68% expected
+
+# Sit out a city-day when the forecast runs span more than this many degrees
+# (usually a front or storm whose timing the models can't agree on).
+MAX_FORECAST_RANGE_F = 12
 
 # Need at least this many ensemble members to trust a probability.
 MIN_MEMBERS = 20
