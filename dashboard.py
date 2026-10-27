@@ -50,7 +50,13 @@ def build():
             except ValueError:
                 pass
 
+    try:
+        import config
+        freeze = getattr(config, "FREEZE_START", None)
+    except Exception:
+        freeze = None
     data = {
+        "freeze_start": freeze,
         "built_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "scanned_at": latest.get("scanned_at"),
         "new_trades": latest.get("new_trades"),
@@ -163,6 +169,7 @@ svg text{fill:var(--muted);font-size:11px}
     <button class="toggle" id="theme">Light / dark</button>
   </header>
 
+  <div class="chips" id="version"></div>
   <div class="kpis" id="kpis"></div>
 
   <h2>Profit over time <small>settled paper trades only</small></h2>
@@ -230,12 +237,65 @@ const fmtDate = s => { const d = new Date(s + "T12:00:00"); return d.toLocaleDat
   $("stamp").textContent = s;
 })();
 
-const trades = D.trades.map(r => ({...r, pnl: r.pnl === "" ? null : +r.pnl,
+const ALL = D.trades.map(r => ({...r, pnl: r.pnl === "" ? null : +r.pnl,
   price: +r.price_cents, n: +r.contracts, p: +r.model_prob_win, edge: +r.edge,
   isLow: / low$/.test(r.city)}));
-const settled = trades.filter(t => t.status === "settled");
-const open = trades.filter(t => t.status === "open");
+let trades = ALL, settled = [], open = [];
+const FREEZE = D.freeze_start;  // "YYYY-MM-DD HH:MM" UTC, same format as logged_at
+let view = "frozen";
+try { const v = localStorage.getItem("wb-view"); if (v) view = v; } catch(e){}
+if (!FREEZE) view = "all";
 
+
+// market board
+(function(){
+  const board = D.board || [];
+  if (!board.length) { $("board").innerHTML = '<div class="empty panel">Run a full scan to fill the board.</div>'; return; }
+  const dates = [...new Set(board.map(c => c.date))].sort();
+  const state = {view: "signals", date: dates[0]};
+  const views = [["signals","With signals"],["all","All cities"],["high","Highs"],["low","Lows"]];
+  function chips(){
+    $("filters").innerHTML = views.map(([k,l]) => `<button class="chip ${state.view===k?"on":""}" data-v="${k}">${l}</button>`).join("") +
+      (dates.length > 1 ? '<span style="width:10px"></span>' + dates.map(d => `<button class="chip ${state.date===d?"on":""}" data-d="${d}">${fmtDate(d)}</button>`).join("") : "");
+    $("filters").querySelectorAll("[data-v]").forEach(b => b.onclick = () => { state.view = b.dataset.v; render(); });
+    $("filters").querySelectorAll("[data-d]").forEach(b => b.onclick = () => { state.date = b.dataset.d; render(); });
+  }
+  function render(){
+    chips();
+    let cards = board.filter(c => c.date === state.date);
+    if (state.view === "signals") cards = cards.filter(c => c.rows.some(r => r.side));
+    if (state.view === "high" || state.view === "low") cards = cards.filter(c => c.kind === state.view);
+    if (!cards.length) { $("board").innerHTML = '<div class="empty panel">No signals on this day. That\'s fine: the bot only flags clear mispricings.</div>'; return; }
+    $("board").innerHTML = cards.map(c => {
+      const hot = c.rows.some(r => r.side);
+      const rows = c.rows.map(r => {
+        const mkt = r.yes_ask != null && r.no_ask != null ? (r.yes_ask + (100 - r.no_ask)) / 2 : (r.yes_ask ?? null);
+        const mk = mkt == null ? "" : `<div class="mk" style="left:calc(${Math.min(mkt,99.5)}% - 1px)" title="market ${Math.round(mkt)}¢"></div>`;
+        const sig = r.side ? `<div></div><div class="sig">BUY ${r.side} at ${r.price}¢ · edge +${Math.round(r.edge*100)}¢</div>` : "";
+        return `<div class="row"><div class="lbl">${esc(r.label)}</div>
+          <div class="bars"><div class="bar" style="width:${(r.model*100).toFixed(1)}%"></div>${mk}</div>
+          <div class="nums">${pct(r.model)} vs ${mkt == null ? "–" : Math.round(mkt) + "¢"}</div></div>${sig}`;
+      }).join("");
+      return `<div class="card ${hot?"hot":""} ${c.kind==="low"?"low-k":""}">
+        <div class="ch"><div class="cn">${esc(c.city)}<span class="kind ${c.kind}">${c.kind}</span></div>
+        <div class="nums">${fmtDate(c.date)}</div></div>
+        <div class="fc">Forecast ${c.kind} <b>${c.forecast.toFixed(1)}°</b> · likely ${Math.round(c.low)}–${Math.round(c.high)}°</div>
+        ${rows}</div>`;
+    }).join("");
+  }
+  render();
+})();
+
+function renderTrades(){
+  trades = view === "frozen" && FREEZE ? ALL.filter(t => t.logged_at >= FREEZE) : ALL;
+  settled = trades.filter(t => t.status === "settled");
+  open = trades.filter(t => t.status === "open");
+  const vs = [["frozen", FREEZE ? "Current version (since " + fmtDate(FREEZE.slice(0,10)) + ")" : ""], ["all", "All trades"]].filter(v => v[1]);
+  $("version").innerHTML = vs.map(([k,l]) => `<button class="chip ${view===k?"on":""}" data-view="${k}">${l}</button>`).join("");
+  $("version").querySelectorAll("[data-view]").forEach(b => b.onclick = () => {
+    view = b.dataset.view; try { localStorage.setItem("wb-view", view); } catch(e){}
+    renderTrades();
+  });
 // KPIs
 (function(){
   const pnl = settled.reduce((a,t) => a + t.pnl, 0);
@@ -275,45 +335,6 @@ const open = trades.filter(t => t.status === "open");
   [0, pts.length-1].filter((v,i,a) => a.indexOf(v) === i).forEach(i => {
     svg += `<text x="${x(i)}" y="${H-4}" text-anchor="middle">${fmtDate(pts[i].d)}</text>`; });
   $("chart").innerHTML = svg + "</svg>";
-})();
-
-// market board
-(function(){
-  const board = D.board || [];
-  if (!board.length) { $("board").innerHTML = '<div class="empty panel">Run a full scan to fill the board.</div>'; return; }
-  const dates = [...new Set(board.map(c => c.date))].sort();
-  const state = {view: "signals", date: dates[0]};
-  const views = [["signals","With signals"],["all","All cities"],["high","Highs"],["low","Lows"]];
-  function chips(){
-    $("filters").innerHTML = views.map(([k,l]) => `<button class="chip ${state.view===k?"on":""}" data-v="${k}">${l}</button>`).join("") +
-      (dates.length > 1 ? '<span style="width:10px"></span>' + dates.map(d => `<button class="chip ${state.date===d?"on":""}" data-d="${d}">${fmtDate(d)}</button>`).join("") : "");
-    $("filters").querySelectorAll("[data-v]").forEach(b => b.onclick = () => { state.view = b.dataset.v; render(); });
-    $("filters").querySelectorAll("[data-d]").forEach(b => b.onclick = () => { state.date = b.dataset.d; render(); });
-  }
-  function render(){
-    chips();
-    let cards = board.filter(c => c.date === state.date);
-    if (state.view === "signals") cards = cards.filter(c => c.rows.some(r => r.side));
-    if (state.view === "high" || state.view === "low") cards = cards.filter(c => c.kind === state.view);
-    if (!cards.length) { $("board").innerHTML = '<div class="empty panel">No signals on this day. That\'s fine: the bot only flags clear mispricings.</div>'; return; }
-    $("board").innerHTML = cards.map(c => {
-      const hot = c.rows.some(r => r.side);
-      const rows = c.rows.map(r => {
-        const mkt = r.yes_ask != null && r.no_ask != null ? (r.yes_ask + (100 - r.no_ask)) / 2 : (r.yes_ask ?? null);
-        const mk = mkt == null ? "" : `<div class="mk" style="left:calc(${Math.min(mkt,99.5)}% - 1px)" title="market ${Math.round(mkt)}¢"></div>`;
-        const sig = r.side ? `<div></div><div class="sig">BUY ${r.side} at ${r.price}¢ · edge +${Math.round(r.edge*100)}¢</div>` : "";
-        return `<div class="row"><div class="lbl">${esc(r.label)}</div>
-          <div class="bars"><div class="bar" style="width:${(r.model*100).toFixed(1)}%"></div>${mk}</div>
-          <div class="nums">${pct(r.model)} vs ${mkt == null ? "–" : Math.round(mkt) + "¢"}</div></div>${sig}`;
-      }).join("");
-      return `<div class="card ${hot?"hot":""} ${c.kind==="low"?"low-k":""}">
-        <div class="ch"><div class="cn">${esc(c.city)}<span class="kind ${c.kind}">${c.kind}</span></div>
-        <div class="nums">${fmtDate(c.date)}</div></div>
-        <div class="fc">Forecast ${c.kind} <b>${c.forecast.toFixed(1)}°</b> · likely ${Math.round(c.low)}–${Math.round(c.high)}°</div>
-        ${rows}</div>`;
-    }).join("");
-  }
-  render();
 })();
 
 // tables
@@ -360,6 +381,9 @@ $("settled").innerHTML = tradeTable(settled.slice().sort((a,b) => b.date.localeC
   $("calib").innerHTML = "<table><tr><th>Trade type</th><th>Trades</th><th>Expected win</th><th>Actual win</th></tr>" + rows + kinds + "</table>" +
     '<div class="help" style="margin-top:8px">Red means the model is winning noticeably less often than it promised.</div>';
 })();
+
+}
+renderTrades();
 
 // forecast errors
 (function(){
