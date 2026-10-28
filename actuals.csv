@@ -45,6 +45,7 @@ Denver,2026-10-23,77.0
 Denver,2026-10-24,57.0
 Denver,2026-10-25,58.0
 Denver,2026-10-26,54.0
+Denver,2026-10-27,64.0
 Denver low,2026-10-23,58.0
 Denver low,2026-10-24,37.0
 Denver low,2026-10-25,37.0
@@ -58,6 +59,7 @@ Las Vegas,2026-10-22,77.0
 Las Vegas,2026-10-23,70.0
 Las Vegas,2026-10-25,74.0
 Las Vegas,2026-10-26,79.0
+Las Vegas,2026-10-27,81.0
 Las Vegas low,2026-10-23,56.0
 Las Vegas low,2026-10-24,58.0
 Las Vegas low,2026-10-25,55.0
@@ -65,6 +67,7 @@ Los Angeles,2026-10-23,72.0
 Los Angeles,2026-10-24,76.0
 Los Angeles,2026-10-25,78.0
 Los Angeles,2026-10-26,77.0
+Los Angeles,2026-10-27,75.0
 Los Angeles low,2026-10-23,59.0
 Los Angeles low,2026-10-24,58.0
 Miami,2026-10-22,80.0
@@ -121,6 +124,7 @@ Phoenix,2026-10-23,82.0
 Phoenix,2026-10-24,77.0
 Phoenix,2026-10-25,83.0
 Phoenix,2026-10-26,86.0
+Phoenix,2026-10-27,87.0
 Phoenix low,2026-10-23,64.0
 Phoenix low,2026-10-24,63.0
 Phoenix low,2026-10-25,60.0
@@ -137,6 +141,7 @@ San Francisco,2026-10-23,69.0
 San Francisco,2026-10-24,74.0
 San Francisco,2026-10-25,74.0
 San Francisco,2026-10-26,68.0
+San Francisco,2026-10-27,66.0
 San Francisco low,2026-10-23,56.0
 San Francisco low,2026-10-24,51.0
 San Francisco low,2026-10-25,51.0
@@ -144,6 +149,7 @@ Seattle,2026-10-22,60.0
 Seattle,2026-10-23,58.0
 Seattle,2026-10-24,55.0
 Seattle,2026-10-26,58.0
+Seattle,2026-10-27,57.0
 Seattle low,2026-10-23,44.0
 Seattle low,2026-10-24,40.0
 Seattle low,2026-10-25,46.0
