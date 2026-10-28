@@ -328,8 +328,10 @@ function renderTrades(){
   const col = last >= 0 ? "var(--win)" : "var(--loss)";
   let svg = `<svg viewBox="0 0 ${W} ${H}" width="100%" role="img" aria-label="Cumulative paper profit">`;
   svg += `<line x1="${P}" x2="${W-P}" y1="${y(0)}" y2="${y(0)}" stroke="var(--line)" stroke-dasharray="4 4"/>`;
-  svg += `<text x="4" y="${y(0)+4}">$0</text><text x="4" y="${y(hi)+4}">${money(hi)}</text>`;
-  if (lo < 0) svg += `<text x="4" y="${y(lo)+4}">${money(lo)}</text>`;
+  svg += `<text x="4" y="${y(0)+4}">$0</text>`;
+  // Only label the top/bottom when they're clear of the $0 line, so labels never overlap.
+  if (hi > 0 && Math.abs(y(hi) - y(0)) > 14) svg += `<text x="4" y="${y(hi)+4}">${money(hi)}</text>`;
+  if (lo < 0 && Math.abs(y(lo) - y(0)) > 14) svg += `<text x="4" y="${y(lo)+4}">${money(lo)}</text>`;
   svg += `<path d="${line}" fill="none" stroke="${col}" stroke-width="2.5" stroke-linejoin="round"/>`;
   pts.forEach((p,i) => { svg += `<circle cx="${x(i)}" cy="${y(p.v)}" r="3.5" fill="${col}"><title>${p.d}: ${money(p.v)}</title></circle>`; });
   [0, pts.length-1].filter((v,i,a) => a.indexOf(v) === i).forEach(i => {
