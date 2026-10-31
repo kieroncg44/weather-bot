@@ -6456,3 +6456,259 @@ Weather bot scan  2026-10-30 23:27 UTC   (paper trading only)
   New Orleans    2026-10-31  81-82°       BUY NO  @ 52¢  edge +9¢
 Run  python3 report.py  after markets settle to see results.
 Dashboard updated: open dashboard.html
+
+PAPER TRADING SCORECARD
+============================================================
+Settled trades: 381    Still open: 18
+Total P&L:      $-170.84   on $1602.70 risked  (ROI -10.7%)
+Win rate:       148/381 = 39%   (model expected 55%)
+
+By city:
+  San Francisco   18 trades   $  +46.29
+  Boston          16 trades   $  +17.67
+  Phoenix         15 trades   $  +13.90
+  Las Vegas       15 trades   $  +13.66
+  Austin          11 trades   $  +10.01
+  Denver          15 trades   $   +4.78
+  Oklahoma City   13 trades   $   +2.72
+  Las Vegas low    5 trades   $   +2.68
+  New York        17 trades   $   +2.44
+  New Orleans low   3 trades   $   +0.78
+  Seattle low      4 trades   $   +0.68
+  Washington DC   15 trades   $   +0.54
+  San Antonio low   4 trades   $   +0.44
+  Oklahoma City low   4 trades   $   +0.43
+  Los Angeles     15 trades   $   +0.10
+  Houston         11 trades   $   -0.26
+  Chicago         15 trades   $   -1.03
+  Philadelphia    15 trades   $   -1.13
+  Los Angeles low   4 trades   $   -1.66
+  Philadelphia low   5 trades   $   -2.15
+  Atlanta low      5 trades   $   -4.57
+  San Francisco low   6 trades   $   -7.37
+  Minneapolis low   3 trades   $   -8.07
+  Washington DC low   5 trades   $   -8.93
+  Austin low       9 trades   $   -9.35
+  Minneapolis     14 trades   $   -9.44
+  Miami           12 trades   $   -9.45
+  Dallas low       3 trades   $  -10.28
+  Phoenix low      6 trades   $  -10.43
+  New York low     9 trades   $  -11.66
+  Denver low       6 trades   $  -11.83
+  Boston low       7 trades   $  -13.90
+  Chicago low      6 trades   $  -14.18
+  Miami low        6 trades   $  -17.18
+  Houston low      3 trades   $  -17.19
+  Atlanta          9 trades   $  -17.78
+  San Antonio     16 trades   $  -21.61
+  Dallas          11 trades   $  -24.41
+  Seattle         13 trades   $  -25.10
+  New Orleans     12 trades   $  -29.00
+
+Forecast error (actual minus our forecast, °F):
+  Boston         avg +2.5 over 1 day(s)
+  Chicago        avg -2.9 over 1 day(s)
+  Houston        avg -0.1 over 1 day(s)
+  Miami          avg +1.8 over 1 day(s)
+  Minneapolis    avg +3.1 over 1 day(s)
+  New Orleans    avg +0.2 over 1 day(s)
+  New York       avg +0.5 over 1 day(s)
+  Oklahoma City  avg -1.4 over 1 day(s)
+  Philadelphia   avg +2.0 over 1 day(s)
+  Washington DC  avg +3.2 over 1 day(s)
+Once a city has 10+ days, put its average into BIAS_F in config.py.
+
+Dashboard updated: open dashboard.html
+Weather bot scan  2026-10-31 12:43 UTC   (paper trading only)
+
+  New York  Sat Oct 31   forecast high 59.6°F  (range 57-63, anchored)
+    bracket          model yes ask  no ask   signal
+    58° or below       18%    58¢    43¢    BUY NO @ 43¢  edge +17¢
+    59-60°             60%    42¢    61¢    BUY YES @ 42¢  edge +6¢
+    61-62°             21%     3¢    98¢    
+    63-64°              1%     2¢    99¢    
+    65-66°              0%     1¢   100¢    
+    67° or above        0%     1¢   100¢    
+
+  Chicago  Sat Oct 31   forecast high 63.8°F  (range 58-69, anchored)
+    bracket          model yes ask  no ask   signal
+    59° or below        4%    17¢    84¢    
+    60-61°             15%    42¢    59¢    BUY NO @ 59¢  edge +11¢
+    62-63°             29%    31¢    71¢    
+    64-65°             27%     7¢    94¢    BUY YES @ 7¢  edge +9¢
+    66-67°             20%     3¢    98¢    
+    68° or above        6%     1¢   100¢    
+
+  Miami  Sat Oct 31   forecast high 83.7°F  (range 80-89, anchored)
+    bracket          model yes ask  no ask   signal
+    80° or below        3%     1¢   100¢    
+    81-82°             20%     2¢    99¢    
+    83-84°             46%    11¢    90¢    BUY YES @ 11¢  edge +16¢
+    85-86°             26%    64¢    40¢    BUY NO @ 40¢  edge +14¢
+    87-88°              4%    25¢    76¢    BUY NO @ 76¢  edge +8¢
+    89° or above        1%     1¢   100¢    
+
+  Austin  Sat Oct 31   forecast high 75.3°F  (range 71-81, anchored)
+    bracket          model yes ask  no ask   signal
+    76° or below       71%     9¢    92¢    
+    77-78°             16%    23¢    78¢    
+    79-80°             12%    36¢    65¢    BUY NO @ 65¢  edge +10¢
+    81-82°              2%    26¢    75¢    BUY NO @ 75¢  edge +10¢
+    83-84°              0%     3¢    98¢    
+    85° or above        0%     1¢   100¢    
+
+  Los Angeles  Sat Oct 31   forecast high 70.1°F  (range 67-77, anchored)
+    bracket          model yes ask  no ask   signal
+    62° or below        0%     1¢   100¢    
+    63-64°              0%     1¢   100¢    
+    65-66°              1%     1¢   100¢    
+    67-68°             21%     2¢    99¢    
+    69-70°             39%    22¢    80¢    BUY YES @ 22¢  edge +7¢
+    71° or above       38%    80¢    21¢    BUY NO @ 21¢  edge +19¢
+
+  Denver  Sat Oct 31   forecast high 60.2°F  (range 55-65, anchored)
+    bracket          model yes ask  no ask   signal
+    57° or below       12%     6¢    95¢    
+    58-59°             33%    11¢    90¢    BUY YES @ 11¢  edge +10¢
+    60-61°             28%    30¢    71¢    
+    62-63°             14%    51¢    50¢    BUY NO @ 50¢  edge +16¢
+    64-65°             12%     5¢    96¢    
+    66° or above        1%     2¢    99¢    
+
+  Philadelphia  Sat Oct 31   forecast high 61.8°F  (range 58-65, anchored)
+    bracket          model yes ask  no ask   signal
+    60° or below       18%     6¢    95¢    
+    61-62°             51%    61¢    40¢    
+    63-64°             29%    33¢    70¢    
+    65-66°              3%     1¢   100¢    
+    67-68°              0%     1¢   100¢    
+    69° or above        0%     1¢   100¢    
+
+  Phoenix  Sat Oct 31   forecast high 81.2°F  (range 73-86, anchored)
+    bracket          model yes ask  no ask   signal
+    75° or below        1%     4¢    97¢    
+    76-77°              4%    18¢    84¢    
+    78-79°             14%    48¢    53¢    BUY NO @ 53¢  edge +14¢
+    80-81°             33%    32¢    72¢    
+    82-83°             33%     4¢    97¢    
+    84° or above       14%     2¢    99¢    
+    (no trade: forecast runs too spread out, 73-86)
+
+  Houston  Sat Oct 31   forecast high 82.0°F  (range 74-88, anchored)
+    bracket          model yes ask  no ask   signal
+    78° or below        9%     2¢    99¢    
+    79-80°             16%    12¢    89¢    
+    81-82°             34%    37¢    65¢    
+    83-84°             22%    44¢    57¢    BUY NO @ 57¢  edge +9¢
+    85-86°             14%     9¢    92¢    
+    87° or above        5%     1¢   100¢    
+    (no trade: forecast runs too spread out, 74-88)
+
+  Dallas  Sat Oct 31   forecast high 77.8°F  (range 73-83, anchored)
+    bracket          model yes ask  no ask   signal
+    72° or below        0%    26¢    75¢    BUY NO @ 75¢  edge +11¢
+    73-74°              4%    29¢    74¢    BUY NO @ 74¢  edge +9¢
+    75-76°             23%    34¢    68¢    
+    77-78°             36%    11¢    90¢    BUY YES @ 11¢  edge +12¢
+    79-80°             25%     1¢   100¢    
+    81° or above       12%     1¢   100¢    
+
+  San Antonio  Sat Oct 31   forecast high 76.1°F  (range 72-79, anchored)
+    bracket          model yes ask  no ask   signal
+    77° or below       80%    55¢    46¢    BUY YES @ 55¢  edge +10¢
+    78-79°             19%    37¢    64¢    BUY NO @ 64¢  edge +7¢
+    80-81°              1%    13¢    88¢    
+    82-83°              0%     2¢    99¢    
+    84-85°              0%     1¢   100¢    
+    86° or above        0%     1¢   100¢    
+
+  Minneapolis  Sat Oct 31   forecast high 57.1°F  (range 52-62, anchored)
+    bracket          model yes ask  no ask   signal
+    53° or below        3%     1¢   100¢    
+    54-55°             20%     7¢    94¢    
+    56-57°             37%    25¢    76¢    
+    58-59°             27%    40¢    61¢    
+    60-61°             12%    26¢    75¢    
+    62° or above        1%     8¢    93¢    
+
+  Oklahoma City  Sat Oct 31   forecast high 67.5°F  (range 64-74, anchored)
+    bracket          model yes ask  no ask   signal
+    66° or below       35%    73¢    28¢    BUY NO @ 28¢  edge +17¢
+    67-68°             32%    25¢    76¢    
+    69-70°             22%     4¢    97¢    
+    71-72°              8%     1¢   100¢    
+    73-74°              2%     1¢   100¢    
+    75° or above        0%     1¢   100¢    
+
+  San Francisco  Sat Oct 31   forecast high 64.2°F  (range 61-67, anchored)
+    bracket          model yes ask  no ask   signal
+    59° or below        0%     1¢   100¢    
+    60-61°              3%     1¢   100¢    
+    62-63°             28%    13¢    88¢    BUY YES @ 13¢  edge +6¢
+    64-65°             50%    42¢    59¢    
+    66-67°             18%    47¢    55¢    BUY NO @ 55¢  edge +11¢
+    68° or above        1%     3¢    98¢    
+
+  Washington DC  Sat Oct 31   forecast high 64.8°F  (range 62-68, anchored)
+    bracket          model yes ask  no ask   signal
+    60° or below        0%     2¢    99¢    
+    61-62°              5%     4¢    97¢    
+    63-64°             40%    42¢    63¢    
+    65-66°             39%    57¢    44¢    BUY NO @ 44¢  edge +6¢
+    67-68°             15%     2¢    99¢    
+    69° or above        1%     1¢   100¢    
+
+  Boston  Sat Oct 31   forecast high 53.3°F  (range 51-57, anchored)
+    bracket          model yes ask  no ask   signal
+    51° or below        8%     2¢    99¢    
+    52-53°             53%    36¢    65¢    BUY YES @ 36¢  edge +6¢
+    54-55°             34%    58¢    43¢    BUY NO @ 43¢  edge +10¢
+    56-57°              5%     7¢    94¢    
+    58-59°              0%     1¢   100¢    
+    60° or above        0%     1¢   100¢    
+
+  Seattle  Sat Oct 31   forecast high 53.9°F  (range 51-57, anchored)
+    bracket          model yes ask  no ask   signal
+    51° or below        5%     3¢    98¢    
+    52-53°             37%    26¢    81¢    
+    54-55°             42%    59¢    42¢    BUY NO @ 42¢  edge +6¢
+    56-57°             16%    17¢    84¢    
+    58-59°              1%     1¢   100¢    
+    60° or above        0%     1¢   100¢    
+
+  Las Vegas  Sat Oct 31   forecast high 71.3°F  (range 66-77, anchored)
+    bracket          model yes ask  no ask   signal
+    68° or below       14%    59¢    44¢    BUY NO @ 44¢  edge +18¢
+    69-70°             27%    32¢    69¢    
+    71-72°             22%     9¢    92¢    
+    73-74°             26%     2¢    99¢    
+    75-76°             10%     1¢   100¢    
+    77° or above        1%     1¢   100¢    
+
+  Atlanta  Sat Oct 31   forecast high 72.3°F  (range 69-78, anchored)
+    bracket          model yes ask  no ask   signal
+    70° or below       17%    41¢    60¢    BUY NO @ 60¢  edge +10¢
+    71-72°             42%    42¢    59¢    
+    73-74°             27%    18¢    85¢    
+    75-76°             10%     3¢    98¢    
+    77-78°              4%     1¢   100¢    
+    79° or above        0%     1¢   100¢    
+
+  New Orleans  Sat Oct 31   forecast high 80.4°F  (range 76-85, anchored)
+    bracket          model yes ask  no ask   signal
+    78° or below       23%     6¢    96¢    BUY YES @ 6¢  edge +7¢
+    79-80°             33%    34¢    67¢    
+    81-82°             23%    52¢    49¢    BUY NO @ 49¢  edge +12¢
+    83-84°             15%    10¢    91¢    
+    85-86°              7%     1¢   100¢    
+    87° or above        0%     1¢   100¢    
+
+============================================================
+5 new paper trade(s) logged to paper_trades.csv:
+  Chicago        2026-10-31  60-61°       BUY NO  @ 59¢  edge +11¢
+  Austin         2026-10-31  81-82°       BUY NO  @ 75¢  edge +10¢
+  Oklahoma City  2026-10-31  66° or below BUY NO  @ 28¢  edge +17¢
+  Washington DC  2026-10-31  65-66°       BUY NO  @ 44¢  edge +6¢
+  Atlanta        2026-10-31  70° or below BUY NO  @ 60¢  edge +10¢
+Run  python3 report.py  after markets settle to see results.
+Dashboard updated: open dashboard.html

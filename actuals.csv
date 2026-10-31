@@ -25,6 +25,7 @@ Boston,2026-10-26,73.0
 Boston,2026-10-27,57.0
 Boston,2026-10-28,52.0
 Boston,2026-10-29,69.0
+Boston,2026-10-30,72.0
 Boston low,2026-10-23,43.0
 Boston low,2026-10-25,40.0
 Chicago,2026-10-22,72.0
@@ -34,6 +35,7 @@ Chicago,2026-10-25,74.0
 Chicago,2026-10-26,64.0
 Chicago,2026-10-27,69.0
 Chicago,2026-10-29,69.0
+Chicago,2026-10-30,57.0
 Chicago low,2026-10-23,49.0
 Chicago low,2026-10-24,52.0
 Chicago low,2026-10-25,53.0
@@ -64,6 +66,7 @@ Houston,2026-10-26,82.0
 Houston,2026-10-27,75.0
 Houston,2026-10-28,82.0
 Houston,2026-10-29,83.0
+Houston,2026-10-30,79.0
 Houston low,2026-10-23,60.0
 Houston low,2026-10-25,64.0
 Las Vegas,2026-10-22,77.0
@@ -91,6 +94,7 @@ Miami,2026-10-24,84.0
 Miami,2026-10-25,82.0
 Miami,2026-10-26,83.0
 Miami,2026-10-27,84.0
+Miami,2026-10-30,87.0
 Miami low,2026-10-23,71.0
 Miami low,2026-10-24,71.0
 Miami low,2026-10-25,71.0
@@ -100,6 +104,7 @@ Minneapolis,2026-10-24,75.0
 Minneapolis,2026-10-25,55.0
 Minneapolis,2026-10-26,49.0
 Minneapolis,2026-10-29,58.0
+Minneapolis,2026-10-30,58.0
 Minneapolis low,2026-10-23,56.0
 Minneapolis low,2026-10-24,51.0
 New Orleans,2026-10-22,82.0
@@ -109,6 +114,7 @@ New Orleans,2026-10-26,78.0
 New Orleans,2026-10-27,80.0
 New Orleans,2026-10-28,80.0
 New Orleans,2026-10-29,80.0
+New Orleans,2026-10-30,80.0
 New Orleans low,2026-10-23,55.0
 New Orleans low,2026-10-25,64.0
 New York,2026-10-22,67.0
@@ -119,6 +125,7 @@ New York,2026-10-26,69.0
 New York,2026-10-27,61.0
 New York,2026-10-28,61.0
 New York,2026-10-29,66.0
+New York,2026-10-30,70.0
 New York low,2026-10-23,47.0
 New York low,2026-10-24,44.0
 New York low,2026-10-25,43.0
@@ -130,6 +137,7 @@ Oklahoma City,2026-10-26,75.0
 Oklahoma City,2026-10-27,78.0
 Oklahoma City,2026-10-28,80.0
 Oklahoma City,2026-10-29,81.0
+Oklahoma City,2026-10-30,67.0
 Oklahoma City low,2026-10-23,53.0
 Oklahoma City low,2026-10-24,52.0
 Oklahoma City low,2026-10-25,54.0
@@ -140,6 +148,7 @@ Philadelphia,2026-10-26,71.0
 Philadelphia,2026-10-27,66.0
 Philadelphia,2026-10-28,67.0
 Philadelphia,2026-10-29,70.0
+Philadelphia,2026-10-30,74.0
 Philadelphia low,2026-10-23,44.0
 Philadelphia low,2026-10-24,40.0
 Philadelphia low,2026-10-25,39.0
@@ -191,6 +200,7 @@ Washington DC,2026-10-26,72.0
 Washington DC,2026-10-27,72.0
 Washington DC,2026-10-28,69.0
 Washington DC,2026-10-29,71.0
+Washington DC,2026-10-30,77.0
 Washington DC low,2026-10-23,49.0
 Washington DC low,2026-10-24,42.0
 Washington DC low,2026-10-25,43.0
