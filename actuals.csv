@@ -27,6 +27,7 @@ Austin,2026-11-02,86.0
 Austin,2026-11-03,83.0
 Austin,2026-11-04,79.0
 Austin,2026-11-05,84.0
+Austin,2026-11-06,74.0
 Austin low,2026-10-23,52.0
 Austin low,2026-10-24,53.0
 Austin low,2026-10-25,58.0
@@ -59,6 +60,7 @@ Chicago,2026-11-01,62.0
 Chicago,2026-11-02,61.0
 Chicago,2026-11-03,73.0
 Chicago,2026-11-05,55.0
+Chicago,2026-11-06,48.0
 Chicago low,2026-10-23,49.0
 Chicago low,2026-10-24,52.0
 Chicago low,2026-10-25,53.0
@@ -76,6 +78,7 @@ Dallas,2026-11-02,85.0
 Dallas,2026-11-03,77.0
 Dallas,2026-11-04,76.0
 Dallas,2026-11-05,82.0
+Dallas,2026-11-06,73.0
 Dallas low,2026-10-23,58.0
 Dallas low,2026-10-25,60.0
 Denver,2026-10-22,74.0
@@ -91,6 +94,7 @@ Denver,2026-11-01,67.0
 Denver,2026-11-03,56.0
 Denver,2026-11-04,57.0
 Denver,2026-11-05,58.0
+Denver,2026-11-06,60.0
 Denver low,2026-10-23,58.0
 Denver low,2026-10-24,37.0
 Denver low,2026-10-25,37.0
@@ -106,6 +110,7 @@ Houston,2026-11-02,86.0
 Houston,2026-11-03,89.0
 Houston,2026-11-04,79.0
 Houston,2026-11-05,82.0
+Houston,2026-11-06,83.0
 Houston low,2026-10-23,60.0
 Houston low,2026-10-25,64.0
 Las Vegas,2026-10-22,77.0
@@ -121,6 +126,7 @@ Las Vegas,2026-11-02,69.0
 Las Vegas,2026-11-03,67.0
 Las Vegas,2026-11-04,69.0
 Las Vegas,2026-11-05,69.0
+Las Vegas,2026-11-06,72.0
 Las Vegas low,2026-10-23,56.0
 Las Vegas low,2026-10-24,58.0
 Las Vegas low,2026-10-25,55.0
@@ -138,6 +144,7 @@ Los Angeles,2026-11-02,73.0
 Los Angeles,2026-11-03,73.0
 Los Angeles,2026-11-04,75.0
 Los Angeles,2026-11-05,78.0
+Los Angeles,2026-11-06,83.0
 Los Angeles low,2026-10-23,59.0
 Los Angeles low,2026-10-24,58.0
 Miami,2026-10-22,80.0
@@ -168,6 +175,7 @@ Minneapolis,2026-11-02,66.0
 Minneapolis,2026-11-03,66.0
 Minneapolis,2026-11-04,53.0
 Minneapolis,2026-11-05,51.0
+Minneapolis,2026-11-06,48.0
 Minneapolis low,2026-10-23,56.0
 Minneapolis low,2026-10-24,51.0
 New Orleans,2026-10-22,82.0
@@ -183,6 +191,7 @@ New Orleans,2026-11-01,79.0
 New Orleans,2026-11-02,78.0
 New Orleans,2026-11-03,83.0
 New Orleans,2026-11-05,78.0
+New Orleans,2026-11-06,77.0
 New Orleans low,2026-10-23,55.0
 New Orleans low,2026-10-25,64.0
 New York,2026-10-22,67.0
@@ -217,6 +226,7 @@ Oklahoma City,2026-11-01,73.0
 Oklahoma City,2026-11-02,74.0
 Oklahoma City,2026-11-03,64.0
 Oklahoma City,2026-11-04,70.0
+Oklahoma City,2026-11-06,55.0
 Oklahoma City low,2026-10-23,53.0
 Oklahoma City low,2026-10-24,52.0
 Oklahoma City low,2026-10-25,54.0
@@ -265,6 +275,7 @@ San Antonio,2026-11-01,83.0
 San Antonio,2026-11-02,83.0
 San Antonio,2026-11-03,84.0
 San Antonio,2026-11-04,78.0
+San Antonio,2026-11-06,74.0
 San Antonio low,2026-10-23,58.0
 San Antonio low,2026-10-25,65.0
 San Francisco,2026-10-22,63.0
@@ -295,6 +306,7 @@ Seattle,2026-11-01,48.0
 Seattle,2026-11-03,57.0
 Seattle,2026-11-04,57.0
 Seattle,2026-11-05,58.0
+Seattle,2026-11-06,56.0
 Seattle low,2026-10-23,44.0
 Seattle low,2026-10-24,40.0
 Seattle low,2026-10-25,46.0
