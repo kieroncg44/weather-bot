@@ -10823,3 +10823,269 @@ Weather bot scan  2026-11-08 12:45 UTC   (paper trading only)
   Dallas         2026-11-08  68° or below BUY NO  @ 54¢  edge +15¢
 Run  python3 report.py  after markets settle to see results.
 Dashboard updated: open dashboard.html
+
+PAPER TRADING SCORECARD
+============================================================
+Settled trades: 524    Still open: 17
+Total P&L:      $-155.43   on $2108.60 risked  (ROI -7.4%)
+Win rate:       202/524 = 39%   (model expected 54%)
+
+By city:
+  Houston         18 trades   $  +33.97
+  San Francisco   24 trades   $  +29.84
+  Las Vegas       23 trades   $  +22.42
+  Boston          23 trades   $  +17.27
+  Denver          22 trades   $  +13.51
+  New York        23 trades   $   +9.81
+  Chicago         22 trades   $   +8.69
+  Phoenix         21 trades   $   +6.79
+  Austin          18 trades   $   +6.19
+  Oklahoma City   20 trades   $   +3.65
+  Las Vegas low    5 trades   $   +2.68
+  New Orleans low   3 trades   $   +0.78
+  Seattle low      4 trades   $   +0.68
+  San Antonio low   4 trades   $   +0.44
+  Oklahoma City low   4 trades   $   +0.43
+  Los Angeles     24 trades   $   -1.01
+  Los Angeles low   4 trades   $   -1.66
+  Washington DC   22 trades   $   -1.94
+  Philadelphia low   5 trades   $   -2.15
+  Atlanta         16 trades   $   -3.62
+  Atlanta low      5 trades   $   -4.57
+  San Francisco low   6 trades   $   -7.37
+  Minneapolis low   3 trades   $   -8.07
+  Washington DC low   5 trades   $   -8.93
+  Austin low       9 trades   $   -9.35
+  Philadelphia    22 trades   $   -9.77
+  Dallas low       3 trades   $  -10.28
+  Phoenix low      6 trades   $  -10.43
+  New York low     9 trades   $  -11.66
+  Denver low       6 trades   $  -11.83
+  Minneapolis     23 trades   $  -12.56
+  Boston low       7 trades   $  -13.90
+  Chicago low      6 trades   $  -14.18
+  Miami low        6 trades   $  -17.18
+  Houston low      3 trades   $  -17.19
+  Miami           18 trades   $  -18.36
+  Dallas          19 trades   $  -21.70
+  San Antonio     23 trades   $  -25.19
+  Seattle         21 trades   $  -33.08
+  New Orleans     19 trades   $  -36.60
+
+Forecast error (actual minus our forecast, °F):
+  Chicago        avg -0.2 over 1 day(s)
+  Dallas         avg +2.5 over 1 day(s)
+  Denver         avg +3.2 over 1 day(s)
+  Houston        avg +1.1 over 1 day(s)
+  Las Vegas      avg -1.0 over 1 day(s)
+  Los Angeles    avg +1.7 over 1 day(s)
+  Minneapolis    avg +6.9 over 1 day(s)
+  New Orleans    avg -1.3 over 1 day(s)
+  Oklahoma City  avg +1.4 over 1 day(s)
+  Phoenix        avg +0.3 over 1 day(s)
+  San Antonio    avg -1.8 over 1 day(s)
+  San Francisco  avg +0.8 over 1 day(s)
+  Seattle        avg +2.5 over 1 day(s)
+Once a city has 10+ days, put its average into BIAS_F in config.py.
+
+Dashboard updated: open dashboard.html
+Weather bot scan  2026-11-08 23:29 UTC   (paper trading only)
+
+  New York  Mon Nov 09   forecast high 57.5°F  (range 54-61, anchored)
+    bracket          model yes ask  no ask   signal
+    56° or below       27%    21¢    80¢    
+    57-58°             45%    65¢    37¢    BUY NO @ 37¢  edge +7¢
+    59-60°             26%    17¢    84¢    
+    61-62°              2%     3¢    98¢    
+    63-64°              0%     2¢    99¢    
+    65° or above        0%     1¢   100¢    
+
+  Chicago  Mon Nov 09   forecast high 58.3°F  (range 57-60, anchored)
+    bracket          model yes ask  no ask   signal
+    54° or below        0%     2¢   100¢    
+    55-56°              5%     2¢    99¢    
+    57-58°             52%     5¢    96¢    
+    59-60°             39%    40¢    61¢    
+    61-62°              3%    55¢    46¢    
+    63° or above        0%     3¢    98¢    
+
+  Miami  Mon Nov 09   forecast high 82.5°F  (range 80-86, anchored)
+    bracket          model yes ask  no ask   signal
+    80° or below       14%     1¢   100¢    
+    81-82°             42%     2¢    99¢    
+    83-84°             28%    25¢    76¢    
+    85-86°             15%    69¢    32¢    
+    87-88°              1%     4¢    97¢    
+    89° or above        0%     1¢   100¢    
+
+  Austin  Mon Nov 09   forecast high 66.2°F  (range 60-74, anchored)
+    bracket          model yes ask  no ask   signal
+    63° or below       23%    14¢    88¢    
+    64-65°             32%    35¢    66¢    
+    66-67°             16%    35¢    68¢    
+    68-69°              9%    12¢    90¢    
+    70-71°              7%     2¢    99¢    
+    72° or above       13%     2¢   100¢    
+    (no trade: forecast runs too spread out, 60-74)
+
+  Los Angeles  Mon Nov 09   forecast high 85.2°F  (range 81-90, anchored)
+    bracket          model yes ask  no ask   signal
+    79° or below        1%     1¢   100¢    
+    80-81°             17%     2¢    99¢    
+    82-83°             24%     5¢    96¢    BUY YES @ 5¢  edge +9¢
+    84-85°             15%    38¢    63¢    BUY NO @ 63¢  edge +9¢
+    86-87°              6%    50¢    51¢    BUY NO @ 51¢  edge +20¢
+    88° or above       38%     7¢    94¢    BUY YES @ 7¢  edge +15¢
+
+  Denver  Mon Nov 09   forecast high 69.4°F  (range 66-73, anchored)
+    bracket          model yes ask  no ask   signal
+    65° or below        0%     1¢   100¢    
+    66-67°              8%     2¢    99¢    
+    68-69°             47%     8¢    93¢    BUY YES @ 8¢  edge +18¢
+    70-71°             37%    36¢    65¢    
+    72-73°              9%    51¢    50¢    BUY NO @ 50¢  edge +19¢
+    74° or above        0%     8¢    93¢    
+
+  Philadelphia  Mon Nov 09   forecast high 59.1°F  (range 55-61, anchored)
+    bracket          model yes ask  no ask   signal
+    58° or below       32%     3¢    98¢    
+    59-60°             48%    28¢    73¢    BUY YES @ 28¢  edge +8¢
+    61-62°             19%    68¢    33¢    
+    63-64°              0%     3¢    99¢    
+    65-66°              0%     2¢    99¢    
+    67° or above        0%     1¢   100¢    
+
+  Phoenix  Mon Nov 09   forecast high 83.2°F  (range 81-85, anchored)
+    bracket          model yes ask  no ask   signal
+    80° or below        1%     1¢   100¢    
+    81-82°             26%    16¢    86¢    
+    83-84°             63%    77¢    24¢    
+    85-86°             10%     9¢    93¢    
+    87-88°              0%     2¢    99¢    
+    89° or above        0%     1¢   100¢    
+
+  Houston  Mon Nov 09   forecast high 68.5°F  (range 62-77, anchored)
+    bracket          model yes ask  no ask   signal
+    65° or below       17%    65¢    36¢    
+    66-67°             21%    32¢    70¢    
+    68-69°             26%     6¢    95¢    BUY YES @ 6¢  edge +9¢
+    70-71°             23%     4¢    97¢    
+    72-73°              7%     2¢    99¢    
+    74° or above        6%     1¢   100¢    
+    (no trade: forecast runs too spread out, 62-77)
+
+  Dallas  Mon Nov 09   forecast high 73.3°F  (range 68-79, anchored)
+    bracket          model yes ask  no ask   signal
+    70° or below       11%    10¢    93¢    
+    71-72°             23%    38¢    67¢    
+    73-74°             38%    36¢    65¢    
+    75-76°             21%    20¢    83¢    
+    77-78°              7%     2¢    99¢    
+    79° or above        1%     1¢   100¢    
+
+  San Antonio  Mon Nov 09   forecast high 62.5°F  (range 58-69, anchored)
+    bracket          model yes ask  no ask   signal
+    62° or below       56%    39¢    62¢    BUY YES @ 39¢  edge +7¢
+    63-64°             21%    45¢    59¢    BUY NO @ 59¢  edge +7¢
+    65-66°             16%    16¢    85¢    
+    67-68°              5%     2¢    99¢    
+    69-70°              2%     2¢    99¢    
+    71° or above        0%     1¢   100¢    
+
+  Minneapolis  Mon Nov 09   forecast high 57.9°F  (range 55-61, anchored)
+    bracket          model yes ask  no ask   signal
+    54° or below        1%     1¢   100¢    
+    55-56°             15%     2¢    99¢    
+    57-58°             50%     4¢    97¢    
+    59-60°             32%     7¢    94¢    BUY YES @ 7¢  edge +12¢
+    61-62°              2%    26¢    85¢    
+    63° or above        0%    70¢    32¢    
+
+  Oklahoma City  Mon Nov 09   forecast high 72.2°F  (range 67-76, anchored)
+    bracket          model yes ask  no ask   signal
+    68° or below        1%     2¢    99¢    
+    69-70°             12%     7¢    94¢    
+    71-72°             48%    69¢    32¢    BUY NO @ 32¢  edge +8¢
+    73-74°             29%    26¢    75¢    
+    75-76°              9%     2¢    99¢    
+    77° or above        1%     1¢   100¢    
+
+  San Francisco  Mon Nov 09   forecast high 66.9°F  (range 62-72, anchored)
+    bracket          model yes ask  no ask   signal
+    67° or below       65%     5¢    96¢    
+    68-69°             28%    17¢    87¢    
+    70-71°              7%    61¢    44¢    
+    72-73°              1%    18¢    86¢    
+    74-75°              0%     4¢    97¢    
+    76° or above        0%     1¢   100¢    
+
+  Washington DC  Mon Nov 09   forecast high 62.0°F  (range 59-65, anchored)
+    bracket          model yes ask  no ask   signal
+    60° or below       17%     2¢    99¢    
+    61-62°             43%     3¢    98¢    
+    63-64°             35%    57¢    44¢    BUY NO @ 44¢  edge +9¢
+    65-66°              5%    42¢    61¢    BUY NO @ 61¢  edge +14¢
+    67-68°              0%     3¢    98¢    
+    69° or above        0%     1¢   100¢    
+
+  Boston  Mon Nov 09   forecast high 53.1°F  (range 50-56, anchored)
+    bracket          model yes ask  no ask   signal
+    54° or below       81%     2¢    99¢    
+    55-56°             18%     7¢    94¢    
+    57-58°              1%    46¢    60¢    BUY NO @ 60¢  edge +16¢
+    59-60°              0%    51¢    50¢    
+    61-62°              0%     2¢    99¢    
+    63° or above        0%     1¢   100¢    
+
+  Seattle  Mon Nov 09   forecast high 56.7°F  (range 53-62, anchored)
+    bracket          model yes ask  no ask   signal
+    51° or below        0%     2¢    99¢    
+    52-53°              4%     4¢    98¢    
+    54-55°             28%    31¢    70¢    
+    56-57°             36%    56¢    45¢    BUY NO @ 45¢  edge +7¢
+    58-59°             19%    10¢    92¢    
+    60° or above       12%     4¢    97¢    
+
+  Las Vegas  Mon Nov 09   forecast high 74.7°F  (range 73-76, anchored)
+    bracket          model yes ask  no ask   signal
+    71° or below        0%     1¢   100¢    
+    72-73°             12%     5¢    96¢    
+    74-75°             66%    75¢    26¢    
+    76-77°             22%    24¢    80¢    
+    78-79°              0%     2¢    99¢    
+    80° or above        0%     1¢   100¢    
+
+  Atlanta  Mon Nov 09   forecast high 72.5°F  (range 70-77, anchored)
+    bracket          model yes ask  no ask   signal
+    66° or below        0%     1¢   100¢    
+    67-68°              0%     1¢   100¢    
+    69-70°              8%     2¢    99¢    
+    71-72°             45%    20¢    86¢    BUY YES @ 20¢  edge +10¢
+    73-74°             34%    70¢    31¢    BUY NO @ 31¢  edge +16¢
+    75° or above       12%    12¢    90¢    
+
+  New Orleans  Mon Nov 09   forecast high 73.5°F  (range 68-81, anchored)
+    bracket          model yes ask  no ask   signal
+    69° or below        3%     5¢    98¢    
+    70-71°             23%    33¢    70¢    
+    72-73°             34%    53¢    48¢    BUY NO @ 48¢  edge +7¢
+    74-75°             20%    13¢    88¢    
+    76-77°              6%     2¢    99¢    
+    78° or above       13%     1¢   100¢    
+    (no trade: forecast runs too spread out, 68-81)
+
+============================================================
+11 new paper trade(s) logged to paper_trades.csv:
+  New York       2026-11-09  57-58°       BUY NO  @ 37¢  edge +7¢
+  Los Angeles    2026-11-09  86-87°       BUY NO  @ 51¢  edge +20¢
+  Denver         2026-11-09  72-73°       BUY NO  @ 50¢  edge +19¢
+  Philadelphia   2026-11-09  59-60°       BUY YES @ 28¢  edge +8¢
+  San Antonio    2026-11-09  63-64°       BUY NO  @ 59¢  edge +8¢
+  Minneapolis    2026-11-09  59-60°       BUY YES @ 7¢  edge +12¢
+  Oklahoma City  2026-11-09  71-72°       BUY NO  @ 32¢  edge +8¢
+  Washington DC  2026-11-09  65-66°       BUY NO  @ 61¢  edge +14¢
+  Boston         2026-11-09  57-58°       BUY NO  @ 60¢  edge +16¢
+  Seattle        2026-11-09  56-57°       BUY NO  @ 45¢  edge +7¢
+  Atlanta        2026-11-09  73-74°       BUY NO  @ 31¢  edge +16¢
+Run  python3 report.py  after markets settle to see results.
+Dashboard updated: open dashboard.html
