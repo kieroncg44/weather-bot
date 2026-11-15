@@ -18,6 +18,7 @@ Atlanta,2026-11-10,74.0
 Atlanta,2026-11-11,70.0
 Atlanta,2026-11-12,67.0
 Atlanta,2026-11-13,53.0
+Atlanta,2026-11-14,55.0
 Atlanta low,2026-10-23,54.0
 Atlanta low,2026-10-24,51.0
 Atlanta low,2026-10-25,52.0
@@ -63,6 +64,7 @@ Boston,2026-11-09,58.0
 Boston,2026-11-10,56.0
 Boston,2026-11-11,57.0
 Boston,2026-11-13,47.0
+Boston,2026-11-14,46.0
 Boston low,2026-10-23,43.0
 Boston low,2026-10-25,40.0
 Chicago,2026-10-22,72.0
@@ -217,6 +219,7 @@ Miami,2026-11-10,85.0
 Miami,2026-11-11,84.0
 Miami,2026-11-12,87.0
 Miami,2026-11-13,81.0
+Miami,2026-11-14,71.0
 Miami low,2026-10-23,71.0
 Miami low,2026-10-24,71.0
 Miami low,2026-10-25,71.0
@@ -332,6 +335,7 @@ Philadelphia,2026-11-09,62.0
 Philadelphia,2026-11-10,65.0
 Philadelphia,2026-11-11,65.0
 Philadelphia,2026-11-12,65.0
+Philadelphia,2026-11-14,48.0
 Philadelphia low,2026-10-23,44.0
 Philadelphia low,2026-10-24,40.0
 Philadelphia low,2026-10-25,39.0
@@ -445,6 +449,7 @@ Washington DC,2026-11-10,67.0
 Washington DC,2026-11-11,69.0
 Washington DC,2026-11-12,67.0
 Washington DC,2026-11-13,52.0
+Washington DC,2026-11-14,53.0
 Washington DC low,2026-10-23,49.0
 Washington DC low,2026-10-24,42.0
 Washington DC low,2026-10-25,43.0
