@@ -17722,3 +17722,245 @@ Weather bot scan  2026-11-21 19:03 UTC   (paper trading only)
   Las Vegas      2026-11-22  60-61°       BUY YES @ 6¢  edge +16¢
 Run  python3 report.py  after markets settle to see results.
 Dashboard updated: open dashboard.html
+
+PAPER TRADING SCORECARD
+============================================================
+Settled trades: 748    Still open: 24
+Total P&L:      $-230.61   on $2992.20 risked  (ROI -7.7%)
+Win rate:       286/748 = 38%   (model expected 54%)
+
+By city:
+  San Francisco   35 trades   $  +40.74
+  Houston         24 trades   $  +35.72
+  Las Vegas       33 trades   $  +20.26
+  Los Angeles     37 trades   $  +18.54
+  New York        35 trades   $  +11.96
+  Washington DC   35 trades   $  +11.42
+  Denver          31 trades   $  +10.23
+  Oklahoma City   33 trades   $   +5.21
+  Las Vegas low    5 trades   $   +2.68
+  Austin          28 trades   $   +2.42
+  New Orleans low   3 trades   $   +0.78
+  Seattle low      4 trades   $   +0.68
+  San Antonio low   4 trades   $   +0.44
+  Oklahoma City low   4 trades   $   +0.43
+  Philadelphia    34 trades   $   -0.99
+  Los Angeles low   4 trades   $   -1.66
+  Philadelphia low   5 trades   $   -2.15
+  Atlanta low      5 trades   $   -4.57
+  Miami           28 trades   $   -5.13
+  San Francisco low   6 trades   $   -7.37
+  Minneapolis low   3 trades   $   -8.07
+  Boston          35 trades   $   -8.72
+  Washington DC low   5 trades   $   -8.93
+  Chicago         35 trades   $   -9.28
+  Austin low       9 trades   $   -9.35
+  Dallas low       3 trades   $  -10.28
+  Phoenix low      6 trades   $  -10.43
+  Phoenix         32 trades   $  -11.11
+  New York low     9 trades   $  -11.66
+  Denver low       6 trades   $  -11.83
+  Boston low       7 trades   $  -13.90
+  Chicago low      6 trades   $  -14.18
+  Atlanta         29 trades   $  -17.15
+  Miami low        6 trades   $  -17.18
+  Houston low      3 trades   $  -17.19
+  Minneapolis     35 trades   $  -27.67
+  Seattle         33 trades   $  -30.11
+  Dallas          31 trades   $  -31.35
+  San Antonio     33 trades   $  -46.43
+  New Orleans     29 trades   $  -55.43
+
+Dashboard updated: open dashboard.html
+Weather bot scan  2026-11-22 02:51 UTC   (paper trading only)
+
+  New York  Sun Nov 22   forecast high 61.6°F  (range 58-66, anchored)
+    bracket          model yes ask  no ask   signal
+    60° or below       30%    51¢    50¢    BUY NO @ 50¢  edge +8¢
+    61-62°             33%    37¢    65¢    
+    63-64°             29%    14¢    87¢    BUY YES @ 14¢  edge +6¢
+    65-66°              7%     2¢    99¢    
+    67-68°              0%     1¢   100¢    
+    69° or above        0%     1¢   100¢    
+
+  Chicago  Sun Nov 22   forecast high 56.2°F  (range 53-61, anchored)
+    bracket          model yes ask  no ask   signal
+    57° or below       81%    16¢    85¢    
+    58-59°             16%    45¢    56¢    BUY NO @ 56¢  edge +12¢
+    60-61°              3%    38¢    64¢    BUY NO @ 64¢  edge +14¢
+    62-63°              0%     3¢    98¢    
+    64-65°              0%     2¢    99¢    
+    66° or above        0%     1¢   100¢    
+
+  Miami  Sun Nov 22   forecast high 80.5°F  (range 77-83, anchored)
+    bracket          model yes ask  no ask   signal
+    80° or below       49%     1¢   100¢    
+    81-82°             46%     5¢    97¢    BUY YES @ 5¢  edge +20¢
+    83-84°              5%    28¢    73¢    BUY NO @ 73¢  edge +9¢
+    85-86°              0%    55¢    46¢    
+    87-88°              0%    12¢    89¢    
+    89° or above        0%     2¢    99¢    
+
+  Austin  Sun Nov 22   forecast high 72.6°F  (range 67-77, anchored)
+    bracket          model yes ask  no ask   signal
+    72° or below       46%    24¢    77¢    BUY YES @ 24¢  edge +9¢
+    73-74°             38%    50¢    51¢    
+    75-76°             13%    30¢    71¢    BUY NO @ 71¢  edge +6¢
+    77-78°              3%     3¢    98¢    
+    79-80°              0%     2¢    99¢    
+    81° or above        0%     1¢   100¢    
+
+  Los Angeles  Sun Nov 22   forecast high 67.8°F  (range 66-69, anchored)
+    bracket          model yes ask  no ask   signal
+    64° or below        0%     1¢   100¢    
+    65-66°             14%     9¢    92¢    
+    67-68°             56%    66¢    35¢    
+    69-70°             29%    24¢    77¢    
+    71-72°              1%     3¢    98¢    
+    73° or above        0%     2¢    99¢    
+
+  Denver  Sun Nov 22   forecast high 45.5°F  (range 37-50, anchored)
+    bracket          model yes ask  no ask   signal
+    40° or below        7%     2¢    99¢    
+    41-42°              7%     3¢    98¢    
+    43-44°             16%    11¢    90¢    
+    45-46°             30%    44¢    59¢    
+    47-48°             29%    33¢    70¢    
+    49° or above       11%    10¢    91¢    
+    (no trade: forecast runs too spread out, 37-50)
+
+  Philadelphia  Sun Nov 22   forecast high 65.3°F  (range 60-71, anchored)
+    bracket          model yes ask  no ask   signal
+    62° or below       20%    19¢    82¢    
+    63-64°             19%    37¢    64¢    BUY NO @ 64¢  edge +6¢
+    65-66°             23%    40¢    61¢    BUY NO @ 61¢  edge +6¢
+    67-68°             22%     7¢    94¢    BUY YES @ 7¢  edge +7¢
+    69-70°             13%     2¢    99¢    
+    71° or above        3%     1¢   100¢    
+
+  Phoenix  Sun Nov 22   forecast high 73.3°F  (range 70-76, anchored)
+    bracket          model yes ask  no ask   signal
+    70° or below        4%     2¢    99¢    
+    71-72°             30%    19¢    82¢    
+    73-74°             41%    67¢    34¢    BUY NO @ 34¢  edge +11¢
+    75-76°             24%     9¢    92¢    BUY YES @ 9¢  edge +7¢
+    77-78°              2%     2¢    99¢    
+    79° or above        0%     1¢   100¢    
+
+  Houston  Sun Nov 22   forecast high 80.3°F  (range 74-84, anchored)
+    bracket          model yes ask  no ask   signal
+    76° or below        1%     2¢    99¢    
+    77-78°             11%     5¢    96¢    
+    79-80°             43%    25¢    79¢    BUY YES @ 25¢  edge +7¢
+    81-82°             36%    50¢    51¢    
+    83-84°              8%    23¢    78¢    
+    85° or above        0%     2¢    99¢    
+
+  Dallas  Sun Nov 22   forecast high 65.9°F  (range 62-71, anchored)
+    bracket          model yes ask  no ask   signal
+    65° or below       44%    16¢    85¢    BUY YES @ 16¢  edge +13¢
+    66-67°             25%    54¢    47¢    BUY NO @ 47¢  edge +12¢
+    68-69°             25%    30¢    71¢    
+    70-71°              4%     4¢    97¢    
+    72-73°              0%     1¢   100¢    
+    74° or above        0%     1¢   100¢    
+
+  San Antonio  Sun Nov 22   forecast high 72.0°F  (range 66-77, anchored)
+    bracket          model yes ask  no ask   signal
+    70° or below       25%     8¢    95¢    BUY YES @ 8¢  edge +7¢
+    71-72°             27%    16¢    85¢    
+    73-74°             33%    49¢    52¢    
+    75-76°             14%    29¢    72¢    
+    77-78°              2%     3¢    98¢    
+    79° or above        0%     1¢   100¢    
+
+  Minneapolis  Sun Nov 22   forecast high 43.2°F  (range 41-45, anchored)
+    bracket          model yes ask  no ask   signal
+    40° or below        1%     1¢   100¢    
+    41-42°             27%     6¢    95¢    BUY YES @ 6¢  edge +10¢
+    43-44°             57%    71¢    30¢    
+    45-46°             14%    21¢    80¢    
+    47-48°              0%     4¢    98¢    
+    49° or above        0%     1¢   100¢    
+
+  Oklahoma City  Sun Nov 22   forecast high 60.4°F  (range 58-63, anchored)
+    bracket          model yes ask  no ask   signal
+    56° or below        0%     2¢   100¢    
+    57-58°              5%    11¢    91¢    
+    59-60°             49%    54¢    50¢    
+    61-62°             42%    33¢    68¢    
+    63-64°              4%     3¢    98¢    
+    65° or above        0%     1¢   100¢    
+
+  San Francisco  Sun Nov 22   forecast high 55.7°F  (range 53-60, anchored)
+    bracket          model yes ask  no ask   signal
+    52° or below        1%     2¢    99¢    
+    53-54°             22%    14¢    89¢    
+    55-56°             46%    61¢    40¢    
+    57-58°             27%    26¢    78¢    
+    59-60°              4%     3¢    98¢    
+    61° or above        0%     2¢    99¢    
+
+  Washington DC  Sun Nov 22   forecast high 67.2°F  (range 61-74, anchored)
+    bracket          model yes ask  no ask   signal
+    61° or below        3%     6¢    95¢    
+    62-63°             18%    11¢    90¢    
+    64-65°             18%    31¢    70¢    
+    66-67°             12%    33¢    68¢    BUY NO @ 68¢  edge +8¢
+    68-69°             16%    23¢    79¢    
+    70° or above       33%     2¢    99¢    
+    (no trade: forecast runs too spread out, 61-74)
+
+  Boston  Sun Nov 22   forecast high 56.5°F  (range 52-61, anchored)
+    bracket          model yes ask  no ask   signal
+    61° or below       99%    94¢    10¢    
+    62-63°              1%     6¢    95¢    
+    64-65°              0%     4¢    98¢    
+    66-67°              0%     2¢    99¢    
+    68-69°              0%     1¢   100¢    
+    70° or above        0%     1¢   100¢    
+
+  Seattle  Sun Nov 22   forecast high 46.8°F  (range 43-52, anchored)
+    bracket          model yes ask  no ask   signal
+    46° or below       46%    12¢    92¢    BUY YES @ 12¢  edge +15¢
+    47-48°             33%    48¢    55¢    
+    49-50°             17%    38¢    65¢    BUY NO @ 65¢  edge +7¢
+    51-52°              3%     5¢    96¢    
+    53-54°              0%     2¢    99¢    
+    55° or above        0%     2¢    99¢    
+
+  Las Vegas  Sun Nov 22   forecast high 60.5°F  (range 59-63, anchored)
+    bracket          model yes ask  no ask   signal
+    55° or below        0%     2¢    99¢    
+    56-57°              0%    61¢    40¢    
+    58-59°             22%    37¢    64¢    
+    60-61°             55%     2¢    99¢    
+    62-63°             21%     2¢    99¢    
+    64° or above        1%     1¢   100¢    
+
+  Atlanta  Sun Nov 22   forecast high 60.8°F  (range 54-69, anchored)
+    bracket          model yes ask  no ask   signal
+    64° or below       85%    83¢    18¢    
+    65-66°              6%    14¢    87¢    
+    67-68°              7%     4¢    97¢    
+    69-70°              2%     2¢    99¢    
+    71-72°              0%     2¢    99¢    
+    73° or above        0%     1¢   100¢    
+    (no trade: forecast runs too spread out, 54-69)
+
+  New Orleans  Sun Nov 22   forecast high 76.2°F  (range 72-83, anchored)
+    bracket          model yes ask  no ask   signal
+    73° or below        7%     6¢    97¢    
+    74-75°             33%    32¢    69¢    
+    76-77°             38%    46¢    61¢    
+    78-79°             14%    18¢    83¢    
+    80-81°              5%     3¢    98¢    
+    82° or above        2%     1¢   100¢    
+
+============================================================
+3 new paper trade(s) logged to paper_trades.csv:
+  Chicago        2026-11-22  60-61°       BUY NO  @ 64¢  edge +14¢
+  Miami          2026-11-22  81-82°       BUY YES @ 5¢  edge +20¢
+  Houston        2026-11-22  79-80°       BUY YES @ 25¢  edge +7¢
+Run  python3 report.py  after markets settle to see results.
+Dashboard updated: open dashboard.html
